@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfproject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="project" nillable="true" type="tns:project" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproject" nillable="true" type="tns:ArrayOfproject" />
+  <xs:complexType name="project">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="annualDemand" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="batchFinishTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="checkResult" nillable="true" type="tns:ArrayOfcheckResult" />
+      <xs:element minOccurs="0" name="createPerson" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="currentStatuID" type="xs:int" />
+      <xs:element minOccurs="0" name="customer" nillable="true" type="tns:ArrayOfcustomer" />
+      <xs:element minOccurs="0" name="customerLH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="demoFinishTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="descriptID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="instanceID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lifeCycle" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="notices" nillable="true" type="tns:ArrayOfnotice" />
+      <xs:element minOccurs="0" name="paymentMethod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productInfoes" nillable="true" type="tns:ArrayOfproductInfo" />
+      <xs:element minOccurs="0" name="productType" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="projectName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="projectStatuChangeInfoes" nillable="true" type="tns:ArrayOfprojectStatuChangeInfo" />
+      <xs:element minOccurs="0" name="projectStatus" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="resourcePath" nillable="true" type="tns:ArrayOfresourcePath" />
+      <xs:element minOccurs="0" name="smallAmountFinishTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="targetPrice" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="testFinishTime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="project" nillable="true" type="tns:project" />
+  <xs:complexType name="ArrayOfcheckResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="checkResult" nillable="true" type="tns:checkResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcheckResult" nillable="true" type="tns:ArrayOfcheckResult" />
+  <xs:complexType name="checkResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checkPersonID" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="checkResult" nillable="true" type="tns:checkResult" />
+  <xs:complexType name="user">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checkPermission" nillable="true" type="tns:ArrayOfcheckPermission" />
+      <xs:element minOccurs="0" name="checkPerson" nillable="true" type="tns:ArrayOfcheckPerson" />
+      <xs:element minOccurs="0" name="checkResult" nillable="true" type="tns:ArrayOfcheckResult" />
+      <xs:element minOccurs="0" name="department" nillable="true" type="tns:department" />
+      <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isleader" type="xs:boolean" />
+      <xs:element minOccurs="0" name="notices" nillable="true" type="tns:ArrayOfnotice" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:ArrayOfproject" />
+      <xs:element minOccurs="0" name="projectStatuChangeInfoes" nillable="true" type="tns:ArrayOfprojectStatuChangeInfo" />
+      <xs:element minOccurs="0" name="pwd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="resourcePath" nillable="true" type="tns:ArrayOfresourcePath" />
+      <xs:element minOccurs="0" name="statu" type="xs:int" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="user" nillable="true" type="tns:user" />
+  <xs:complexType name="ArrayOfcheckPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="checkPermission" nillable="true" type="tns:checkPermission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcheckPermission" nillable="true" type="tns:ArrayOfcheckPermission" />
+  <xs:complexType name="checkPermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="projectStatuID" type="xs:int" />
+      <xs:element minOccurs="0" name="projectStatus" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="userID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="checkPermission" nillable="true" type="tns:checkPermission" />
+  <xs:complexType name="projectStatus">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checkPermission" nillable="true" type="tns:ArrayOfcheckPermission" />
+      <xs:element minOccurs="0" name="checkPerson" nillable="true" type="tns:ArrayOfcheckPerson" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="notices" nillable="true" type="tns:ArrayOfnotice" />
+      <xs:element minOccurs="0" name="permission" nillable="true" type="tns:ArrayOfpermission" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:ArrayOfproject" />
+      <xs:element minOccurs="0" name="projectStatuChangeInfoes" nillable="true" type="tns:ArrayOfprojectStatuChangeInfo" />
+      <xs:element minOccurs="0" name="resourcePath" nillable="true" type="tns:ArrayOfresourcePath" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="projectStatus" nillable="true" type="tns:projectStatus" />
+  <xs:complexType name="ArrayOfcheckPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="checkPerson" nillable="true" type="tns:checkPerson" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcheckPerson" nillable="true" type="tns:ArrayOfcheckPerson" />
+  <xs:complexType name="checkPerson">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="projectStatus" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="statusID" type="xs:int" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="userID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="checkPerson" nillable="true" type="tns:checkPerson" />
+  <xs:complexType name="ArrayOfnotice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="notice" nillable="true" type="tns:notice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfnotice" nillable="true" type="tns:ArrayOfnotice" />
+  <xs:complexType name="notice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="projectStatu" type="xs:int" />
+      <xs:element minOccurs="0" name="projectStatu1" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="readtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="statu" type="xs:boolean" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="userID" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="notice" nillable="true" type="tns:notice" />
+  <xs:complexType name="ArrayOfpermission">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="permission" nillable="true" type="tns:permission" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpermission" nillable="true" type="tns:ArrayOfpermission" />
+  <xs:complexType name="permission">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="department" nillable="true" type="tns:department" />
+      <xs:element minOccurs="0" name="departmentID" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="permissions" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="projectStatus" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="projectStatusID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="permission" nillable="true" type="tns:permission" />
+  <xs:complexType name="department">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departmentName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="permission" nillable="true" type="tns:ArrayOfpermission" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:ArrayOfuser" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="department" nillable="true" type="tns:department" />
+  <xs:complexType name="ArrayOfuser">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="user" nillable="true" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfuser" nillable="true" type="tns:ArrayOfuser" />
+  <xs:complexType name="ArrayOfprojectStatuChangeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="projectStatuChangeInfo" nillable="true" type="tns:projectStatuChangeInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfprojectStatuChangeInfo" nillable="true" type="tns:ArrayOfprojectStatuChangeInfo" />
+  <xs:complexType name="projectStatuChangeInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="projectStatu" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="statu" type="xs:int" />
+      <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+      <xs:element minOccurs="0" name="userID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="projectStatuChangeInfo" nillable="true" type="tns:projectStatuChangeInfo" />
+  <xs:complexType name="ArrayOfresourcePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="resourcePath" nillable="true" type="tns:resourcePath" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfresourcePath" nillable="true" type="tns:ArrayOfresourcePath" />
+  <xs:complexType name="resourcePath">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dntime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="filePath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="projectStatus" nillable="true" type="tns:projectStatus" />
+      <xs:element minOccurs="0" name="statu" type="xs:int" />
+      <xs:element minOccurs="0" name="type" type="xs:int" />
+      <xs:element minOccurs="0" name="uploadPerson" type="xs:int" />
+      <xs:element minOccurs="0" name="user" nillable="true" type="tns:user" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="resourcePath" nillable="true" type="tns:resourcePath" />
+  <xs:complexType name="ArrayOfcustomer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="customer" nillable="true" type="tns:customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcustomer" nillable="true" type="tns:ArrayOfcustomer" />
+  <xs:complexType name="customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="department" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postision" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="customer" nillable="true" type="tns:customer" />
+  <xs:complexType name="ArrayOfproductInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="productInfo" nillable="true" type="tns:productInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfproductInfo" nillable="true" type="tns:ArrayOfproductInfo" />
+  <xs:complexType name="productInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="innerID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="project" nillable="true" type="tns:project" />
+      <xs:element minOccurs="0" name="projectID" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="productInfo" nillable="true" type="tns:productInfo" />
+</xs:schema>

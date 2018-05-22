@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UFDATA_999_2014Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cCusCode" />
+    </Key>
+    <Property Name="cCusCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="cCusName" Type="nvarchar" MaxLength="98" />
+    <Property Name="cCusAbbName" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="cCCCode" Type="nvarchar" MaxLength="12" />
+    <Property Name="cDCCode" Type="nvarchar" MaxLength="12" />
+    <Property Name="cTrade" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCusPostCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusRegCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusBank" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusAccount" Type="nvarchar" MaxLength="50" />
+    <Property Name="dCusDevDate" Type="datetime" />
+    <Property Name="cCusLPerson" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusPhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusFax" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusBP" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusHand" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusPPerson" Type="nvarchar" MaxLength="20" />
+    <Property Name="iCusDisRate" Type="float" />
+    <Property Name="cCusCreGrade" Type="nvarchar" MaxLength="6" />
+    <Property Name="iCusCreLine" Type="float" />
+    <Property Name="iCusCreDate" Type="int" />
+    <Property Name="cCusPayCond" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusOAddress" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCusOType" Type="nvarchar" MaxLength="10" />
+    <Property Name="cCusHeadCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusWhCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="cCusDepart" Type="nvarchar" MaxLength="12" />
+    <Property Name="iARMoney" Type="float" />
+    <Property Name="dLastDate" Type="datetime" />
+    <Property Name="iLastMoney" Type="float" />
+    <Property Name="dLRDate" Type="datetime" />
+    <Property Name="iLRMoney" Type="float" />
+    <Property Name="dEndDate" Type="datetime" />
+    <Property Name="iFrequency" Type="int" />
+    <Property Name="cCusDefine1" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusDefine2" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusDefine3" Type="nvarchar" MaxLength="20" />
+    <Property Name="iCostGrade" Type="smallint" />
+    <Property Name="cCreatePerson" Type="nvarchar" MaxLength="20" />
+    <Property Name="cModifyPerson" Type="nvarchar" MaxLength="20" />
+    <Property Name="dModifyDate" Type="datetime" />
+    <Property Name="cRelVendor" Type="nvarchar" MaxLength="20" />
+    <Property Name="iId" Type="nvarchar" MaxLength="40" />
+    <Property Name="cPriceGroup" Type="nvarchar" MaxLength="20" />
+    <Property Name="cOfferGrade" Type="nvarchar" MaxLength="20" />
+    <Property Name="iOfferRate" Type="float" />
+    <Property Name="cCusDefine4" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusDefine5" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusDefine6" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusDefine7" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusDefine8" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusDefine9" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusDefine10" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusDefine11" Type="int" />
+    <Property Name="cCusDefine12" Type="int" />
+    <Property Name="cCusDefine13" Type="float" />
+    <Property Name="cCusDefine14" Type="float" />
+    <Property Name="cCusDefine15" Type="datetime" />
+    <Property Name="cCusDefine16" Type="datetime" />
+    <Property Name="pubufts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="cInvoiceCompany" Type="nvarchar" MaxLength="60" />
+    <Property Name="bCredit" Type="bit" Nullable="false" />
+    <Property Name="bCreditDate" Type="bit" Nullable="false" />
+    <Property Name="bCreditByHead" Type="bit" Nullable="false" />
+    <Property Name="bLicenceDate" Type="bit" Nullable="false" />
+    <Property Name="dLicenceSDate" Type="datetime" />
+    <Property Name="dLicenceEDate" Type="datetime" />
+    <Property Name="iLicenceADays" Type="int" />
+    <Property Name="bBusinessDate" Type="bit" Nullable="false" />
+    <Property Name="dBusinessSDate" Type="datetime" />
+    <Property Name="dBusinessEDate" Type="datetime" />
+    <Property Name="iBusinessADays" Type="int" />
+    <Property Name="bProxy" Type="bit" Nullable="false" />
+    <Property Name="dProxySDate" Type="datetime" />
+    <Property Name="dProxyEDate" Type="datetime" />
+    <Property Name="iProxyADays" Type="int" />
+    <Property Name="cMemo" Type="nvarchar" MaxLength="1000" />
+    <Property Name="bLimitSale" Type="bit" Nullable="false" />
+    <Property Name="cCusContactCode" Type="uniqueidentifier" />
+    <Property Name="cCusCountryCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="cCusEnName" Type="nvarchar" MaxLength="100" />
+    <Property Name="cCusEnAddr1" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusEnAddr2" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusEnAddr3" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusEnAddr4" Type="nvarchar" MaxLength="60" />
+    <Property Name="cCusPortCode" Type="nvarchar" MaxLength="10" />
+    <Property Name="cPrimaryVen" Type="nvarchar" MaxLength="20" />
+    <Property Name="fCommisionRate" Type="float" />
+    <Property Name="fInsueRate" Type="float" />
+    <Property Name="bHomeBranch" Type="bit" Nullable="false" />
+    <Property Name="cBranchAddr" Type="nvarchar" MaxLength="255" />
+    <Property Name="cBranchPhone" Type="nvarchar" MaxLength="100" />
+    <Property Name="cBranchPerson" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusTradeCCode" Type="nvarchar" MaxLength="12" />
+    <Property Name="CustomerKCode" Type="nvarchar" MaxLength="4" />
+    <Property Name="bCusState" Type="bit" Nullable="false" />
+    <Property Name="bShop" Type="smallint" />
+    <Property Name="cCusBankCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusExch_name" Type="nvarchar" MaxLength="50" />
+    <Property Name="iCusGSPType" Type="smallint" Nullable="false" />
+    <Property Name="iCusGSPAuth" Type="smallint" />
+    <Property Name="cCusGSPAuthNo" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusBusinessNo" Type="nvarchar" MaxLength="120" />
+    <Property Name="cCusLicenceNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="bCusDomestic" Type="bit" Nullable="false" />
+    <Property Name="bCusOverseas" Type="bit" Nullable="false" />
+    <Property Name="cCusCreditCompany" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusSAProtocol" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusExProtocol" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusOtherProtocol" Type="nvarchar" MaxLength="20" />
+    <Property Name="fCusDiscountRate" Type="float" />
+    <Property Name="cCusSSCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="cCusCMProtocol" Type="nvarchar" MaxLength="20" />
+    <Property Name="dCusCreateDatetime" Type="datetime" Nullable="false" />
+    <Property Name="cCusAppDocNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="cCusMnemCode" Type="nvarchar" MaxLength="98" />
+    <Property Name="fAdvancePaymentRatio" Type="float" />
+    <Property Name="bServiceAttribute" Type="bit" Nullable="false" />
+    <Property Name="bRequestSign" Type="bit" Nullable="false" />
+    <Property Name="bOnGPinStore" Type="bit" />
+    <Property Name="cCusMngTypeCode" Type="nvarchar" MaxLength="32" />
+    <Property Name="account_type" Type="numeric" Precision="22" Scale="0" />
+    <Property Name="cCusImAgentProtocol" Type="nvarchar" MaxLength="20" />
+    <Property Name="iSourceType" Type="smallint" />
+    <Property Name="iSourceId" Type="varchar" MaxLength="20" />
+    <Property Name="fExpense" Type="float" />
+    <Property Name="fApprovedExpense" Type="float" />
+    <Property Name="dTouchedTime" Type="datetime" />
+    <Property Name="dRecentlyInvoiceTime" Type="datetime" />
+    <Property Name="dRecentlyQuoteTime" Type="datetime" />
+    <Property Name="dRecentlyActivityTime" Type="datetime" />
+    <Property Name="dRecentlyChanceTime" Type="datetime" />
+    <Property Name="dRecentlyContractTime" Type="datetime" />
+    <Property Name="cLtcCustomerCode" Type="nvarchar" MaxLength="100" />
+    <Property Name="bTransFlag" Type="bit" />
+    <Property Name="cLtcPerson" Type="nvarchar" MaxLength="40" />
+    <Property Name="dLtcDate" Type="datetime" />
+    <Property Name="cLocationSite" Type="nvarchar" MaxLength="128" />
+    <Property Name="iCusTaxRate" Type="float" />
+    <Property Name="alloct_dept_time" Type="datetime" />
+    <Property Name="allot_user_time" Type="datetime" />
+    <Property Name="recyle_dept_time" Type="datetime" />
+    <Property Name="recyle_pub_time" Type="datetime" />
+    <Property Name="cLicenceNo" Type="nvarchar" MaxLength="120" />
+    <Property Name="cLicenceRange" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCusBusinessRange" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCusGSPAuthRange" Type="nvarchar" MaxLength="255" />
+    <Property Name="dCusGSPEDate" Type="datetime" />
+    <Property Name="dCusGSPSDate" Type="datetime" />
+    <Property Name="iCusGSPADays" Type="int" />
+    <Property Name="bIsCusAttachFile" Type="bit" />
+    <Property Name="dRecentContractDate" Type="datetime" />
+    <Property Name="dRecentDeliveryDate" Type="datetime" />
+    <Property Name="dRecentOutboundDate" Type="datetime" />
+    <Property Name="cProvince" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCity" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCounty" Type="nvarchar" MaxLength="255" />
+    <Property Name="cCusAddressGUID" Type="uniqueidentifier" />
+    <Property Name="cAddCode" Type="nvarchar" MaxLength="30" />
+    <Property Name="cCreditAddCode" Type="nvarchar" MaxLength="18" />
+    <Property Name="cRegCash" Type="nvarchar" MaxLength="60" />
+    <Property Name="dDepBeginDate" Type="datetime" />
+    <Property Name="iEmployeeNum" Type="int" />
+    <Property Name="cURL" Type="nvarchar" MaxLength="50" />
+    <Property Name="PictureGUID" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityContainer Name="UFDATA_999_2014ModelStoreContainer">
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

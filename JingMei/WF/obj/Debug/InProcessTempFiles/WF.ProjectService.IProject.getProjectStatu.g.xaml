@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:getProjectStatu this:EndpointConfigurationName="ProjectService" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:this="clr-namespace:WF.ProjectService.Activities;assembly=WF" xmlns:wp="clr-namespace:WF.ProjectService;assembly=WF, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:wp1="clr-namespace:WF.ProjectService;assembly=WF" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:getProjectStatu.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IProject/getProjectStatu" OperationName="getProjectStatu" ServiceContractName="p:IProject">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="wp1:getProjectStatuRequest">[New WF.ProjectService.getProjectStatuRequest() With { .projectID = projectID }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IProject/getProjectStatuResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="wp1:getProjectStatuResponse">
+            <VariableReference x:TypeArguments="wp1:getProjectStatuResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="wp1:getProjectStatuResponse" x:Name="__ReferenceID1" Name="tempResult_2f10f46f82d547a3baf5d3d7421d3c4f" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[getProjectStatuResult]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[tempResult_2f10f46f82d547a3baf5d3d7421d3c4f.getProjectStatuResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>d6oBRzpc5LyY5pyN5pmu6IGUXOmhueebrlzlvIDlj5HkuK3nmoTpobnnm65c5pm2576OXOaZtue+jumhueebrueuoeeQhl/pso3pobrkuq5cSmluZ01laVxXRlxDb25uZWN0ZWQgU2VydmljZXNcUHJvamVjdFNlcnZpY2VcV0YuUHJvamVjdFNlcnZpY2UuSVByb2plY3QuZ2V0UHJvamVjdFN0YXR1LnhhbWwJIANODgIBASUFOQ8CAQo6BUQXAgEHRQVMDgIBAjRCNJIBAgEMKg8uHwIBCz0LQR8CAQlKL0pyAgEFRzBHRwIBAw==</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:getProjectStatu.Implementation>
+</this:getProjectStatu>

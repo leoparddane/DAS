@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="User" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:8744/User/?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8744/User/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8744/User/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUser_checkPwd_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkPwd" />
+  </wsdl:message>
+  <wsdl:message name="IUser_checkPwd_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkPwdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_getUserID_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUserID" />
+  </wsdl:message>
+  <wsdl:message name="IUser_getUserID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUserIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_checkPerimission_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkPerimission" />
+  </wsdl:message>
+  <wsdl:message name="IUser_checkPerimission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkPerimissionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUser_hsaCheckPermission_InputMessage">
+    <wsdl:part name="parameters" element="tns:hsaCheckPermission" />
+  </wsdl:message>
+  <wsdl:message name="IUser_hsaCheckPermission_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hsaCheckPermissionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUser">
+    <wsdl:operation name="checkPwd">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/checkPwd" message="tns:IUser_checkPwd_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/checkPwdResponse" message="tns:IUser_checkPwd_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/getUserID" message="tns:IUser_getUserID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/getUserIDResponse" message="tns:IUser_getUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkPerimission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/checkPerimission" message="tns:IUser_checkPerimission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/checkPerimissionResponse" message="tns:IUser_checkPerimission_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hsaCheckPermission">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUser/hsaCheckPermission" message="tns:IUser_hsaCheckPermission_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUser/hsaCheckPermissionResponse" message="tns:IUser_hsaCheckPermission_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserService" type="tns:IUser">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkPwd">
+      <soap:operation soapAction="http://tempuri.org/IUser/checkPwd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserID">
+      <soap:operation soapAction="http://tempuri.org/IUser/getUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkPerimission">
+      <soap:operation soapAction="http://tempuri.org/IUser/checkPerimission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hsaCheckPermission">
+      <soap:operation soapAction="http://tempuri.org/IUser/hsaCheckPermission" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="User">
+    <wsdl:port name="UserService" binding="tns:UserService">
+      <soap:address location="http://localhost:8744/User/" />
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_IUser" binding="i0:MetadataExchangeHttpBinding_IUser">
+      <soap12:address location="http://localhost:8744/User/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8744/User/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

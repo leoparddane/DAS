@@ -1,0 +1,4 @@
+obj\Debug\_WF.g.cs
+obj\Debug\projectActivity.g.cs
+obj\Debug\WF_Project_BeforeInitializeComponentHelper.cs
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\WF\obj\Debug\WF_Project_CompiledExpressionRoot.cs

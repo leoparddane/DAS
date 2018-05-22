@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:getAllList this:EndpointConfigurationName="ProjectService" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:srs="clr-namespace:System.Runtime.Serialization;assembly=System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" xmlns:this="clr-namespace:WF.WCFProjectService.Activities;assembly=WF" xmlns:ww="clr-namespace:WF.WCFProjectService;assembly=WF" xmlns:ww1="clr-namespace:WF.WCFProjectService;assembly=WF, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:getAllList.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IProject/getAllList" OperationName="getAllList" ServiceContractName="p:IProject">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="ww:getAllListRequest">[New WF.WCFProjectService.getAllListRequest()]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IProject/getAllListResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="ww:getAllListResponse">
+            <VariableReference x:TypeArguments="ww:getAllListResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="ww:getAllListResponse" x:Name="__ReferenceID1" Name="tempResult_040637cf1a654aef9651b0a88a7d4c2f" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="ww:project[]">[getAllListResult]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="ww:project[]">[tempResult_040637cf1a654aef9651b0a88a7d4c2f.getAllListResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>d6sBRzpc5LyY5pyN5pmu6IGUXOmhueebrlzlvIDlj5HkuK3nmoTpobnnm65c5pm2576OXOaZtue+jumhueebrueuoeeQhl/pso3pobrkuq5cSmluZ01laVxXRlxDb25uZWN0ZWQgU2VydmljZXNcV0NGUHJvamVjdFNlcnZpY2VcV0YuV0NGUHJvamVjdFNlcnZpY2UuSVByb2plY3QuZ2V0QWxsTGlzdC54YW1sCRwDSg4CAQEhBTUPAgEKNgVAFwIBB0EFSA4CAQIwPDBqAgEMJg8qHwIBCzkLPR8CAQlGNEZyAgEFQzVDRwIBAw==</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:getAllList.Implementation>
+</this:getAllList>

@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UFDATA_999_2014Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="cCusCode" />
+    </Key>
+    <Property Name="cCusCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cCusName" Type="String" MaxLength="98" FixedLength="false" Unicode="true" />
+    <Property Name="cCusAbbName" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="cCCCode" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="cDCCode" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="cTrade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCusPostCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusRegCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusBank" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusAccount" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dCusDevDate" Type="DateTime" Precision="3" />
+    <Property Name="cCusLPerson" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusFax" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusBP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusHand" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusPPerson" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="iCusDisRate" Type="Double" />
+    <Property Name="cCusCreGrade" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="iCusCreLine" Type="Double" />
+    <Property Name="iCusCreDate" Type="Int32" />
+    <Property Name="cCusPayCond" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusOAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCusOType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="cCusHeadCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusWhCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDepart" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="iARMoney" Type="Double" />
+    <Property Name="dLastDate" Type="DateTime" Precision="3" />
+    <Property Name="iLastMoney" Type="Double" />
+    <Property Name="dLRDate" Type="DateTime" Precision="3" />
+    <Property Name="iLRMoney" Type="Double" />
+    <Property Name="dEndDate" Type="DateTime" Precision="3" />
+    <Property Name="iFrequency" Type="Int32" />
+    <Property Name="cCusDefine1" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine3" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="iCostGrade" Type="Int16" />
+    <Property Name="cCreatePerson" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cModifyPerson" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="dModifyDate" Type="DateTime" Precision="3" />
+    <Property Name="cRelVendor" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="iId" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="cPriceGroup" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cOfferGrade" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="iOfferRate" Type="Double" />
+    <Property Name="cCusDefine4" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine5" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine6" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine7" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine8" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine9" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine10" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusDefine11" Type="Int32" />
+    <Property Name="cCusDefine12" Type="Int32" />
+    <Property Name="cCusDefine13" Type="Double" />
+    <Property Name="cCusDefine14" Type="Double" />
+    <Property Name="cCusDefine15" Type="DateTime" Precision="3" />
+    <Property Name="cCusDefine16" Type="DateTime" Precision="3" />
+    <Property Name="pubufts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="cInvoiceCompany" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="bCredit" Type="Boolean" Nullable="false" />
+    <Property Name="bCreditDate" Type="Boolean" Nullable="false" />
+    <Property Name="bCreditByHead" Type="Boolean" Nullable="false" />
+    <Property Name="bLicenceDate" Type="Boolean" Nullable="false" />
+    <Property Name="dLicenceSDate" Type="DateTime" Precision="3" />
+    <Property Name="dLicenceEDate" Type="DateTime" Precision="3" />
+    <Property Name="iLicenceADays" Type="Int32" />
+    <Property Name="bBusinessDate" Type="Boolean" Nullable="false" />
+    <Property Name="dBusinessSDate" Type="DateTime" Precision="3" />
+    <Property Name="dBusinessEDate" Type="DateTime" Precision="3" />
+    <Property Name="iBusinessADays" Type="Int32" />
+    <Property Name="bProxy" Type="Boolean" Nullable="false" />
+    <Property Name="dProxySDate" Type="DateTime" Precision="3" />
+    <Property Name="dProxyEDate" Type="DateTime" Precision="3" />
+    <Property Name="iProxyADays" Type="Int32" />
+    <Property Name="cMemo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="bLimitSale" Type="Boolean" Nullable="false" />
+    <Property Name="cCusContactCode" Type="Guid" />
+    <Property Name="cCusCountryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEnName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEnAddr1" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEnAddr2" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEnAddr3" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusEnAddr4" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="cCusPortCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="cPrimaryVen" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="fCommisionRate" Type="Double" />
+    <Property Name="fInsueRate" Type="Double" />
+    <Property Name="bHomeBranch" Type="Boolean" Nullable="false" />
+    <Property Name="cBranchAddr" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cBranchPhone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cBranchPerson" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusTradeCCode" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerKCode" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="bCusState" Type="Boolean" Nullable="false" />
+    <Property Name="bShop" Type="Int16" />
+    <Property Name="cCusBankCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusExch_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="iCusGSPType" Type="Int16" Nullable="false" />
+    <Property Name="iCusGSPAuth" Type="Int16" />
+    <Property Name="cCusGSPAuthNo" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusBusinessNo" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cCusLicenceNo" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="bCusDomestic" Type="Boolean" Nullable="false" />
+    <Property Name="bCusOverseas" Type="Boolean" Nullable="false" />
+    <Property Name="cCusCreditCompany" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusSAProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusExProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusOtherProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="fCusDiscountRate" Type="Double" />
+    <Property Name="cCusSSCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="cCusCMProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="dCusCreateDatetime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="cCusAppDocNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="cCusMnemCode" Type="String" MaxLength="98" FixedLength="false" Unicode="true" />
+    <Property Name="fAdvancePaymentRatio" Type="Double" />
+    <Property Name="bServiceAttribute" Type="Boolean" Nullable="false" />
+    <Property Name="bRequestSign" Type="Boolean" Nullable="false" />
+    <Property Name="bOnGPinStore" Type="Boolean" />
+    <Property Name="cCusMngTypeCode" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="account_type" Type="Decimal" Precision="22" Scale="0" />
+    <Property Name="cCusImAgentProtocol" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="iSourceType" Type="Int16" />
+    <Property Name="iSourceId" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fExpense" Type="Double" />
+    <Property Name="fApprovedExpense" Type="Double" />
+    <Property Name="dTouchedTime" Type="DateTime" Precision="3" />
+    <Property Name="dRecentlyInvoiceTime" Type="DateTime" Precision="3" />
+    <Property Name="dRecentlyQuoteTime" Type="DateTime" Precision="3" />
+    <Property Name="dRecentlyActivityTime" Type="DateTime" Precision="3" />
+    <Property Name="dRecentlyChanceTime" Type="DateTime" Precision="3" />
+    <Property Name="dRecentlyContractTime" Type="DateTime" Precision="3" />
+    <Property Name="cLtcCustomerCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="bTransFlag" Type="Boolean" />
+    <Property Name="cLtcPerson" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="dLtcDate" Type="DateTime" Precision="3" />
+    <Property Name="cLocationSite" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="iCusTaxRate" Type="Double" />
+    <Property Name="alloct_dept_time" Type="DateTime" Precision="3" />
+    <Property Name="allot_user_time" Type="DateTime" Precision="3" />
+    <Property Name="recyle_dept_time" Type="DateTime" Precision="3" />
+    <Property Name="recyle_pub_time" Type="DateTime" Precision="3" />
+    <Property Name="cLicenceNo" Type="String" MaxLength="120" FixedLength="false" Unicode="true" />
+    <Property Name="cLicenceRange" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCusBusinessRange" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCusGSPAuthRange" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="dCusGSPEDate" Type="DateTime" Precision="3" />
+    <Property Name="dCusGSPSDate" Type="DateTime" Precision="3" />
+    <Property Name="iCusGSPADays" Type="Int32" />
+    <Property Name="bIsCusAttachFile" Type="Boolean" />
+    <Property Name="dRecentContractDate" Type="DateTime" Precision="3" />
+    <Property Name="dRecentDeliveryDate" Type="DateTime" Precision="3" />
+    <Property Name="dRecentOutboundDate" Type="DateTime" Precision="3" />
+    <Property Name="cProvince" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCity" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCounty" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="cCusAddressGUID" Type="Guid" />
+    <Property Name="cAddCode" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="cCreditAddCode" Type="String" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="cRegCash" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="dDepBeginDate" Type="DateTime" Precision="3" />
+    <Property Name="iEmployeeNum" Type="Int32" />
+    <Property Name="cURL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PictureGUID" Type="Guid" />
+  </EntityType>
+  <EntityContainer Name="UFDATA_999_2014Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,3017 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="JingMeiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="checkPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+          <Property Name="projectStatuID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="checkPerson">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="statusID" Type="int" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="checkResult">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="checkPersonID" Type="int" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="department" Type="varchar" MaxLength="50" />
+          <Property Name="postision" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="nchar" MaxLength="14" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmentName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="notice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="userID" Type="int" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="projectStatu" Type="int" Nullable="false" />
+          <Property Name="statu" Type="bit" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="readtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="permission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="departmentID" Type="int" Nullable="false" />
+          <Property Name="projectStatusID" Type="int" Nullable="false" />
+          <Property Name="permissions" Type="char" MaxLength="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="productInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="productID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="innerID" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descriptID" Type="varchar" MaxLength="50" />
+          <Property Name="projectName" Type="varchar" MaxLength="50" />
+          <Property Name="customername" Type="varchar" MaxLength="50" />
+          <Property Name="customerLH" Type="varchar" MaxLength="50" />
+          <Property Name="currentStatuID" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="createPerson" Type="int" />
+          <Property Name="targetPrice" Type="float" />
+          <Property Name="annualDemand" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="lifeCycle" Type="varchar" MaxLength="50" />
+          <Property Name="paymentMethod" Type="varchar" MaxLength="50" />
+          <Property Name="productType" Type="int" />
+          <Property Name="demoFinishTime" Type="datetime" />
+          <Property Name="testFinishTime" Type="datetime" />
+          <Property Name="smallAmountFinishTime" Type="datetime" />
+          <Property Name="batchFinishTime" Type="datetime" />
+          <Property Name="instanceID" Type="nchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="projectIDTemp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="int" Nullable="false" />
+          <Property Name="useDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="projectStatuChangeInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="projectStatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="resourcePath">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="filePath" Type="varchar" MaxLength="240" />
+          <Property Name="uploadPerson" Type="int" Nullable="false" />
+          <Property Name="dntime" Type="datetime" Nullable="false" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="note" Type="varchar" MaxLength="800" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="pwd" Type="char" MaxLength="32" Nullable="false" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="departmentID" Type="int" Nullable="false" />
+          <Property Name="isleader" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DefinitionIdentityTable">
+          <Key>
+            <PropertyRef Name="SurrogateIdentityId" />
+          </Key>
+          <Property Name="SurrogateIdentityId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DefinitionIdentityHash" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="DefinitionIdentityAnyRevisionHash" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Package" Type="nvarchar(max)" />
+          <Property Name="Build" Type="bigint" />
+          <Property Name="Major" Type="bigint" />
+          <Property Name="Minor" Type="bigint" />
+          <Property Name="Revision" Type="bigint" />
+        </EntityType>
+        <EntityType Name="IdentityOwnerTable">
+          <Key>
+            <PropertyRef Name="SurrogateIdentityId" />
+            <PropertyRef Name="SurrogateLockOwnerId" />
+          </Key>
+          <Property Name="SurrogateIdentityId" Type="bigint" Nullable="false" />
+          <Property Name="SurrogateLockOwnerId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InstanceMetadataChangesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+            <PropertyRef Name="ChangeTime" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="bigint" Nullable="false" />
+          <Property Name="ChangeTime" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EncodingOption" Type="tinyint" Nullable="false" />
+          <Property Name="Change" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value1”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value2”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value3”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value4”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value5”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value6”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value7”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value8”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value9”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value10”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value11”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value12”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value13”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value14”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value15”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value16”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value17”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value18”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value19”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value20”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value21”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value22”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value23”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value24”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value25”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value26”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value27”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value28”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value29”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value30”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value31”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedPropertiesTable”中的列“Value32”。-->
+        <EntityType Name="InstancePromotedPropertiesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+            <PropertyRef Name="PromotionName" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="bigint" Nullable="false" />
+          <Property Name="PromotionName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Value33" Type="varbinary(max)" />
+          <Property Name="Value34" Type="varbinary(max)" />
+          <Property Name="Value35" Type="varbinary(max)" />
+          <Property Name="Value36" Type="varbinary(max)" />
+          <Property Name="Value37" Type="varbinary(max)" />
+          <Property Name="Value38" Type="varbinary(max)" />
+          <Property Name="Value39" Type="varbinary(max)" />
+          <Property Name="Value40" Type="varbinary(max)" />
+          <Property Name="Value41" Type="varbinary(max)" />
+          <Property Name="Value42" Type="varbinary(max)" />
+          <Property Name="Value43" Type="varbinary(max)" />
+          <Property Name="Value44" Type="varbinary(max)" />
+          <Property Name="Value45" Type="varbinary(max)" />
+          <Property Name="Value46" Type="varbinary(max)" />
+          <Property Name="Value47" Type="varbinary(max)" />
+          <Property Name="Value48" Type="varbinary(max)" />
+          <Property Name="Value49" Type="varbinary(max)" />
+          <Property Name="Value50" Type="varbinary(max)" />
+          <Property Name="Value51" Type="varbinary(max)" />
+          <Property Name="Value52" Type="varbinary(max)" />
+          <Property Name="Value53" Type="varbinary(max)" />
+          <Property Name="Value54" Type="varbinary(max)" />
+          <Property Name="Value55" Type="varbinary(max)" />
+          <Property Name="Value56" Type="varbinary(max)" />
+          <Property Name="Value57" Type="varbinary(max)" />
+          <Property Name="Value58" Type="varbinary(max)" />
+          <Property Name="Value59" Type="varbinary(max)" />
+          <Property Name="Value60" Type="varbinary(max)" />
+          <Property Name="Value61" Type="varbinary(max)" />
+          <Property Name="Value62" Type="varbinary(max)" />
+          <Property Name="Value63" Type="varbinary(max)" />
+          <Property Name="Value64" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="InstancesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SurrogateInstanceId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurrogateLockOwnerId" Type="bigint" />
+          <Property Name="PrimitiveDataProperties" Type="varbinary(max)" />
+          <Property Name="ComplexDataProperties" Type="varbinary(max)" />
+          <Property Name="WriteOnlyPrimitiveDataProperties" Type="varbinary(max)" />
+          <Property Name="WriteOnlyComplexDataProperties" Type="varbinary(max)" />
+          <Property Name="MetadataProperties" Type="varbinary(max)" />
+          <Property Name="DataEncodingOption" Type="tinyint" />
+          <Property Name="MetadataEncodingOption" Type="tinyint" />
+          <Property Name="Version" Type="bigint" Nullable="false" />
+          <Property Name="PendingTimer" Type="datetime" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+          <Property Name="WorkflowHostType" Type="uniqueidentifier" />
+          <Property Name="ServiceDeploymentId" Type="bigint" />
+          <Property Name="SuspensionExceptionName" Type="nvarchar" MaxLength="450" />
+          <Property Name="SuspensionReason" Type="nvarchar(max)" />
+          <Property Name="BlockingBookmarks" Type="nvarchar(max)" />
+          <Property Name="LastMachineRunOn" Type="nvarchar" MaxLength="450" />
+          <Property Name="ExecutionStatus" Type="nvarchar" MaxLength="450" />
+          <Property Name="IsInitialized" Type="bit" />
+          <Property Name="IsSuspended" Type="bit" />
+          <Property Name="IsReadyToRun" Type="bit" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="SurrogateIdentityId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KeysTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SurrogateKeyId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SurrogateInstanceId" Type="bigint" />
+          <Property Name="EncodingOption" Type="tinyint" />
+          <Property Name="Properties" Type="varbinary(max)" />
+          <Property Name="IsAssociated" Type="bit" />
+        </EntityType>
+        <EntityType Name="LockOwnersTable">
+          <Key>
+            <PropertyRef Name="SurrogateLockOwnerId" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SurrogateLockOwnerId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LockExpiration" Type="datetime" Nullable="false" />
+          <Property Name="WorkflowHostType" Type="uniqueidentifier" />
+          <Property Name="MachineName" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="EnqueueCommand" Type="bit" Nullable="false" />
+          <Property Name="DeletesInstanceOnCompletion" Type="bit" Nullable="false" />
+          <Property Name="PrimitiveLockOwnerData" Type="varbinary(max)" />
+          <Property Name="ComplexLockOwnerData" Type="varbinary(max)" />
+          <Property Name="WriteOnlyPrimitiveLockOwnerData" Type="varbinary(max)" />
+          <Property Name="WriteOnlyComplexLockOwnerData" Type="varbinary(max)" />
+          <Property Name="EncodingOption" Type="tinyint" />
+          <Property Name="WorkflowIdentityFilter" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RunnableInstancesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="bigint" Nullable="false" />
+          <Property Name="WorkflowHostType" Type="uniqueidentifier" />
+          <Property Name="ServiceDeploymentId" Type="bigint" />
+          <Property Name="RunnableTime" Type="datetime" Nullable="false" />
+          <Property Name="SurrogateIdentityId" Type="bigint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceDeploymentsTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ServiceDeploymentHash" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RelativeServicePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RelativeApplicationPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ServiceNamespace" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SqlWorkflowInstanceStoreVersionTable">
+          <Key>
+            <PropertyRef Name="Major" />
+            <PropertyRef Name="Minor" />
+            <PropertyRef Name="Build" />
+            <PropertyRef Name="Revision" />
+          </Key>
+          <Property Name="Major" Type="bigint" Nullable="false" />
+          <Property Name="Minor" Type="bigint" Nullable="false" />
+          <Property Name="Build" Type="bigint" Nullable="false" />
+          <Property Name="Revision" Type="bigint" Nullable="false" />
+          <Property Name="LastUpdated" Type="datetime" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.dbo.maxStatuChange”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="maxStatuChange">
+          <Key>
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="time" />
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="time" Type="datetime" Nullable="false" />
+          <Property Name="userID" Type="int" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.dbo.projectInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="projectInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="descriptID" Type="varchar" MaxLength="50" />
+          <Property Name="projectName" Type="varchar" MaxLength="50" />
+          <Property Name="customername" Type="varchar" MaxLength="50" />
+          <Property Name="customerLH" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="instanceID" Type="nchar" MaxLength="128" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.dbo.projectShowInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="projectShowInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="currentStatuID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="createPersonName" />
+          </Key>
+          <Property Name="id" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="instanceID" Type="nchar" MaxLength="128" />
+          <Property Name="projectName" Type="varchar" MaxLength="50" />
+          <Property Name="customerLH" Type="varchar" MaxLength="50" />
+          <Property Name="currentStatuID" Type="int" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="datetime" />
+          <Property Name="createPerson" Type="int" />
+          <Property Name="createPersonName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.dbo.zz_ext_resoutceInfo”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="zz_ext_resoutceInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="statuName" />
+            <PropertyRef Name="uploadPerson" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="dntime" />
+            <PropertyRef Name="filePath" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="projectName" Type="varchar" MaxLength="50" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="statuName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="filePath" Type="varchar" MaxLength="240" Nullable="false" />
+          <Property Name="uploadPerson" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dntime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.dbo.zz_ext_resoutceNotes”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="zz_ext_resoutceNotes">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="statuName" />
+            <PropertyRef Name="uploadPerson" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="dntime" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="projectID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="projectName" Type="varchar" MaxLength="50" />
+          <Property Name="statu" Type="int" Nullable="false" />
+          <Property Name="statuName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="note" Type="varchar" MaxLength="400" />
+          <Property Name="uploadPerson" Type="int" Nullable="false" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="dntime" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value1”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value2”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value3”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value4”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value5”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value6”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value7”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value8”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value9”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value10”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value11”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value12”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value13”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value14”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value15”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value16”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value17”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value18”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value19”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value20”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value21”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value22”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value23”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value24”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value25”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value26”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value27”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value28”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value29”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value30”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value31”。
+警告 6005: 目标实体框架版本目前不支持数据类型“sql_variant”；已排除表“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”中的列“Value32”。
+警告 6002: 表/视图“JingMei.System.Activities.DurableInstancing.InstancePromotedProperties”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="InstancePromotedProperties">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+            <PropertyRef Name="PromotionName" />
+          </Key>
+          <Property Name="InstanceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="EncodingOption" Type="tinyint" />
+          <Property Name="PromotionName" Type="nvarchar" MaxLength="400" Nullable="false" />
+          <Property Name="Value33" Type="varbinary(max)" />
+          <Property Name="Value34" Type="varbinary(max)" />
+          <Property Name="Value35" Type="varbinary(max)" />
+          <Property Name="Value36" Type="varbinary(max)" />
+          <Property Name="Value37" Type="varbinary(max)" />
+          <Property Name="Value38" Type="varbinary(max)" />
+          <Property Name="Value39" Type="varbinary(max)" />
+          <Property Name="Value40" Type="varbinary(max)" />
+          <Property Name="Value41" Type="varbinary(max)" />
+          <Property Name="Value42" Type="varbinary(max)" />
+          <Property Name="Value43" Type="varbinary(max)" />
+          <Property Name="Value44" Type="varbinary(max)" />
+          <Property Name="Value45" Type="varbinary(max)" />
+          <Property Name="Value46" Type="varbinary(max)" />
+          <Property Name="Value47" Type="varbinary(max)" />
+          <Property Name="Value48" Type="varbinary(max)" />
+          <Property Name="Value49" Type="varbinary(max)" />
+          <Property Name="Value50" Type="varbinary(max)" />
+          <Property Name="Value51" Type="varbinary(max)" />
+          <Property Name="Value52" Type="varbinary(max)" />
+          <Property Name="Value53" Type="varbinary(max)" />
+          <Property Name="Value54" Type="varbinary(max)" />
+          <Property Name="Value55" Type="varbinary(max)" />
+          <Property Name="Value56" Type="varbinary(max)" />
+          <Property Name="Value57" Type="varbinary(max)" />
+          <Property Name="Value58" Type="varbinary(max)" />
+          <Property Name="Value59" Type="varbinary(max)" />
+          <Property Name="Value60" Type="varbinary(max)" />
+          <Property Name="Value61" Type="varbinary(max)" />
+          <Property Name="Value62" Type="varbinary(max)" />
+          <Property Name="Value63" Type="varbinary(max)" />
+          <Property Name="Value64" Type="varbinary(max)" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.System.Activities.DurableInstancing.Instances”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Instances">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+            <PropertyRef Name="CreationTime" />
+          </Key>
+          <Property Name="InstanceId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="PendingTimer" Type="datetime" />
+          <Property Name="CreationTime" Type="datetime" Nullable="false" />
+          <Property Name="LastUpdatedTime" Type="datetime" />
+          <Property Name="ServiceDeploymentId" Type="bigint" />
+          <Property Name="SuspensionExceptionName" Type="nvarchar" MaxLength="450" />
+          <Property Name="SuspensionReason" Type="nvarchar(max)" />
+          <Property Name="ActiveBookmarks" Type="nvarchar(max)" />
+          <Property Name="CurrentMachine" Type="nvarchar" MaxLength="128" />
+          <Property Name="LastMachine" Type="nvarchar" MaxLength="450" />
+          <Property Name="ExecutionStatus" Type="nvarchar" MaxLength="450" />
+          <Property Name="IsInitialized" Type="bit" />
+          <Property Name="IsSuspended" Type="bit" />
+          <Property Name="IsCompleted" Type="bit" />
+          <Property Name="EncodingOption" Type="tinyint" />
+          <Property Name="ReadWritePrimitiveDataProperties" Type="varbinary(max)" />
+          <Property Name="WriteOnlyPrimitiveDataProperties" Type="varbinary(max)" />
+          <Property Name="ReadWriteComplexDataProperties" Type="varbinary(max)" />
+          <Property Name="WriteOnlyComplexDataProperties" Type="varbinary(max)" />
+          <Property Name="IdentityName" Type="nvarchar(max)" />
+          <Property Name="IdentityPackage" Type="nvarchar(max)" />
+          <Property Name="Build" Type="bigint" />
+          <Property Name="Major" Type="bigint" />
+          <Property Name="Minor" Type="bigint" />
+          <Property Name="Revision" Type="bigint" />
+        </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“JingMei.System.Activities.DurableInstancing.ServiceDeployments”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="ServiceDeployments">
+          <Key>
+            <PropertyRef Name="ServiceDeploymentId" />
+            <PropertyRef Name="SiteName" />
+            <PropertyRef Name="RelativeServicePath" />
+            <PropertyRef Name="RelativeApplicationPath" />
+            <PropertyRef Name="ServiceName" />
+            <PropertyRef Name="ServiceNamespace" />
+          </Key>
+          <Property Name="ServiceDeploymentId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RelativeServicePath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="RelativeApplicationPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ServiceName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ServiceNamespace" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_checkPermission_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="checkPermission" Type="Self.checkPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPermission">
+              <PropertyRef Name="projectStatuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkPermission_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="checkPermission" Type="Self.checkPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPermission">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkPerson_projectStatus1">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="checkPerson" Type="Self.checkPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPerson">
+              <PropertyRef Name="statusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkPerson_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="checkPerson" Type="Self.checkPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPerson">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkResult_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="checkResult" Type="Self.checkResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkResult">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkResult_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="checkResult" Type="Self.checkResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkResult">
+              <PropertyRef Name="checkPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="customer" Type="Self.customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notice_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="notice" Type="Self.notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notice_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="notice" Type="Self.notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="projectStatu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notice_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="notice" Type="Self.notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_permission_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="permission" Type="Self.permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permission">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_permission_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="permission" Type="Self.permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permission">
+              <PropertyRef Name="projectStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_productInfo_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="productInfo" Type="Self.productInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productInfo">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="project" Type="Self.project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="currentStatuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_user">
+          <End Role="user" Type="Self.user" Multiplicity="0..1" />
+          <End Role="project" Type="Self.project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="createPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectStatuChangeInfo_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="projectStatuChangeInfo" Type="Self.projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="statu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectStatuChangeInfo_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="projectStatuChangeInfo" Type="Self.projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectStatuInfo_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="projectStatuChangeInfo" Type="Self.projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resourcePath_project">
+          <End Role="project" Type="Self.project" Multiplicity="1" />
+          <End Role="resourcePath" Type="Self.resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resourcePath_projectStatus">
+          <End Role="projectStatus" Type="Self.projectStatus" Multiplicity="1" />
+          <End Role="resourcePath" Type="Self.resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="statu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resourcePath_user">
+          <End Role="user" Type="Self.user" Multiplicity="1" />
+          <End Role="resourcePath" Type="Self.resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="uploadPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_department">
+          <End Role="department" Type="Self.department" Multiplicity="1" />
+          <End Role="user" Type="Self.user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="getNewProjectID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="newProjectID" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="AssociateKeys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="In" />
+          <Parameter Name="keysToAssociate" Type="xml" Mode="In" />
+          <Parameter Name="concatenatedKeyProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="encodingOption" Type="tinyint" Mode="In" />
+          <Parameter Name="singleKeyId" Type="uniqueidentifier" Mode="In" />
+        </Function>
+        <Function Name="CompleteKeys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="In" />
+          <Parameter Name="keysToComplete" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="CreateInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="serviceDeploymentId" Type="bigint" Mode="In" />
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="InOut" />
+          <Parameter Name="result" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="CreateLockOwner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="lockOwnerId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="lockTimeout" Type="int" Mode="In" />
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="enqueueCommand" Type="bit" Mode="In" />
+          <Parameter Name="deleteInstanceOnCompletion" Type="bit" Mode="In" />
+          <Parameter Name="primitiveLockOwnerData" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="complexLockOwnerData" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="writeOnlyPrimitiveLockOwnerData" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="writeOnlyComplexLockOwnerData" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="encodingOption" Type="tinyint" Mode="In" />
+          <Parameter Name="machineName" Type="nvarchar" Mode="In" />
+          <Parameter Name="identityMetadata" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="CreateServiceDeployment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="serviceDeploymentHash" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="siteName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="relativeServicePath" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="relativeApplicationPath" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="serviceName" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="serviceNamespace" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="serviceDeploymentId" Type="bigint" Mode="InOut" />
+        </Function>
+        <Function Name="DeleteInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="DeleteLockOwner" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="DetectRunnableInstances" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="ExtendLock" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="lockTimeout" Type="int" Mode="In" />
+        </Function>
+        <Function Name="FreeKeys" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="In" />
+          <Parameter Name="keysToFree" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="GetActivatableWorkflowsActivationParameters" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="machineName" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="GetExpirationTime" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing" ReturnType="datetime">
+          <Parameter Name="offsetInMilliseconds" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="GetWorkflowInstanceStoreVersion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing" />
+        <Function Name="InsertDefinitionIdentity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="identityMetadata" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="InsertPromotedProperties" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="promotionName" Type="nvarchar" Mode="In" />
+          <Parameter Name="value33" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value34" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value35" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value36" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value37" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value38" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value39" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value40" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value41" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value42" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value43" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value44" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value45" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value46" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value47" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value48" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value49" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value50" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value51" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value52" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value53" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value54" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value55" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value56" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value57" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value58" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value59" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value60" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value61" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value62" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value63" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="value64" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="InsertRunnableInstanceEntry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="In" />
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="serviceDeploymentId" Type="bigint" Mode="In" />
+          <Parameter Name="isSuspended" Type="bit" Mode="In" />
+          <Parameter Name="isReadyToRun" Type="bit" Mode="In" />
+          <Parameter Name="pendingTimer" Type="datetime" Mode="In" />
+          <Parameter Name="surrogateIdentityId" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="LoadInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="operationType" Type="tinyint" Mode="In" />
+          <Parameter Name="handleInstanceVersion" Type="bigint" Mode="In" />
+          <Parameter Name="handleIsBoundToLock" Type="bit" Mode="In" />
+          <Parameter Name="keyToLoadBy" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="keysToAssociate" Type="xml" Mode="In" />
+          <Parameter Name="encodingOption" Type="tinyint" Mode="In" />
+          <Parameter Name="concatenatedKeyProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="singleKeyId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="operationTimeout" Type="int" Mode="In" />
+        </Function>
+        <Function Name="LockInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="handleInstanceVersion" Type="bigint" Mode="In" />
+          <Parameter Name="handleIsBoundToLock" Type="bit" Mode="In" />
+          <Parameter Name="surrogateInstanceId" Type="bigint" Mode="InOut" />
+          <Parameter Name="lockVersion" Type="bigint" Mode="InOut" />
+          <Parameter Name="result" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="ParseBinaryPropertyValue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing" ReturnType="varbinary(max)">
+          <Parameter Name="startPosition" Type="int" Mode="In" />
+          <Parameter Name="length" Type="int" Mode="In" />
+          <Parameter Name="concatenatedKeyProperties" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="RecoverInstanceLocks" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing" />
+        <Function Name="SaveInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="handleInstanceVersion" Type="bigint" Mode="In" />
+          <Parameter Name="handleIsBoundToLock" Type="bit" Mode="In" />
+          <Parameter Name="primitiveDataProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="complexDataProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="writeOnlyPrimitiveDataProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="writeOnlyComplexDataProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="metadataProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="metadataIsConsistent" Type="bit" Mode="In" />
+          <Parameter Name="encodingOption" Type="tinyint" Mode="In" />
+          <Parameter Name="timerDurationMilliseconds" Type="bigint" Mode="In" />
+          <Parameter Name="suspensionStateChange" Type="tinyint" Mode="In" />
+          <Parameter Name="suspensionReason" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="suspensionExceptionName" Type="nvarchar" Mode="In" />
+          <Parameter Name="keysToAssociate" Type="xml" Mode="In" />
+          <Parameter Name="keysToComplete" Type="xml" Mode="In" />
+          <Parameter Name="keysToFree" Type="xml" Mode="In" />
+          <Parameter Name="concatenatedKeyProperties" Type="varbinary(max)" Mode="In" />
+          <Parameter Name="unlockInstance" Type="bit" Mode="In" />
+          <Parameter Name="isReadyToRun" Type="bit" Mode="In" />
+          <Parameter Name="isCompleted" Type="bit" Mode="In" />
+          <Parameter Name="singleKeyId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="lastMachineRunOn" Type="nvarchar" Mode="In" />
+          <Parameter Name="executionStatus" Type="nvarchar" Mode="In" />
+          <Parameter Name="blockingBookmarks" Type="nvarchar(max)" Mode="In" />
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="serviceDeploymentId" Type="bigint" Mode="In" />
+          <Parameter Name="operationTimeout" Type="int" Mode="In" />
+          <Parameter Name="identityMetadata" Type="xml" Mode="In" />
+        </Function>
+        <Function Name="TryLoadRunnableInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="workflowHostType" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="operationType" Type="tinyint" Mode="In" />
+          <Parameter Name="handleInstanceVersion" Type="bigint" Mode="In" />
+          <Parameter Name="handleIsBoundToLock" Type="bit" Mode="In" />
+          <Parameter Name="encodingOption" Type="tinyint" Mode="In" />
+          <Parameter Name="operationTimeout" Type="int" Mode="In" />
+        </Function>
+        <Function Name="UnlockInstance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="System.Activities.DurableInstancing">
+          <Parameter Name="surrogateLockOwnerId" Type="bigint" Mode="In" />
+          <Parameter Name="instanceId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="handleInstanceVersion" Type="bigint" Mode="In" />
+        </Function>
+        <EntityContainer Name="JingMeiModelStoreContainer">
+          <EntitySet Name="checkPermission" EntityType="Self.checkPermission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="checkPerson" EntityType="Self.checkPerson" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="checkResult" EntityType="Self.checkResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="customer" EntityType="Self.customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="department" EntityType="Self.department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="notice" EntityType="Self.notice" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="permission" EntityType="Self.permission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="productInfo" EntityType="Self.productInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="project" EntityType="Self.project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="projectIDTemp" EntityType="Self.projectIDTemp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="projectStatuChangeInfo" EntityType="Self.projectStatuChangeInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="projectStatus" EntityType="Self.projectStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="resourcePath" EntityType="Self.resourcePath" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DefinitionIdentityTable" EntityType="Self.DefinitionIdentityTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="IdentityOwnerTable" EntityType="Self.IdentityOwnerTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="InstanceMetadataChangesTable" EntityType="Self.InstanceMetadataChangesTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="InstancePromotedPropertiesTable" EntityType="Self.InstancePromotedPropertiesTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="InstancesTable" EntityType="Self.InstancesTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="KeysTable" EntityType="Self.KeysTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="LockOwnersTable" EntityType="Self.LockOwnersTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="RunnableInstancesTable" EntityType="Self.RunnableInstancesTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="ServiceDeploymentsTable" EntityType="Self.ServiceDeploymentsTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="SqlWorkflowInstanceStoreVersionTable" EntityType="Self.SqlWorkflowInstanceStoreVersionTable" Schema="System.Activities.DurableInstancing" store:Type="Tables" />
+          <EntitySet Name="maxStatuChange" EntityType="Self.maxStatuChange" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [maxStatuChange].[projectID] AS [projectID], 
+    [maxStatuChange].[statu] AS [statu], 
+    [maxStatuChange].[time] AS [time], 
+    [maxStatuChange].[userID] AS [userID]
+    FROM [dbo].[maxStatuChange] AS [maxStatuChange]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="projectInfo" EntityType="Self.projectInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [projectInfo].[id] AS [id], 
+    [projectInfo].[descriptID] AS [descriptID], 
+    [projectInfo].[projectName] AS [projectName], 
+    [projectInfo].[customername] AS [customername], 
+    [projectInfo].[customerLH] AS [customerLH], 
+    [projectInfo].[name] AS [name], 
+    [projectInfo].[date] AS [date], 
+    [projectInfo].[username] AS [username], 
+    [projectInfo].[instanceID] AS [instanceID]
+    FROM [dbo].[projectInfo] AS [projectInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="projectShowInfo" EntityType="Self.projectShowInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [projectShowInfo].[id] AS [id], 
+    [projectShowInfo].[instanceID] AS [instanceID], 
+    [projectShowInfo].[projectName] AS [projectName], 
+    [projectShowInfo].[customerLH] AS [customerLH], 
+    [projectShowInfo].[currentStatuID] AS [currentStatuID], 
+    [projectShowInfo].[name] AS [name], 
+    [projectShowInfo].[date] AS [date], 
+    [projectShowInfo].[createPerson] AS [createPerson], 
+    [projectShowInfo].[createPersonName] AS [createPersonName]
+    FROM [dbo].[projectShowInfo] AS [projectShowInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="zz_ext_resoutceInfo" EntityType="Self.zz_ext_resoutceInfo" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [zz_ext_resoutceInfo].[id] AS [id], 
+    [zz_ext_resoutceInfo].[projectID] AS [projectID], 
+    [zz_ext_resoutceInfo].[projectName] AS [projectName], 
+    [zz_ext_resoutceInfo].[statu] AS [statu], 
+    [zz_ext_resoutceInfo].[statuName] AS [statuName], 
+    [zz_ext_resoutceInfo].[filePath] AS [filePath], 
+    [zz_ext_resoutceInfo].[uploadPerson] AS [uploadPerson], 
+    [zz_ext_resoutceInfo].[username] AS [username], 
+    [zz_ext_resoutceInfo].[dntime] AS [dntime]
+    FROM [dbo].[zz_ext_resoutceInfo] AS [zz_ext_resoutceInfo]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="zz_ext_resoutceNotes" EntityType="Self.zz_ext_resoutceNotes" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [zz_ext_resoutceNotes].[id] AS [id], 
+    [zz_ext_resoutceNotes].[projectID] AS [projectID], 
+    [zz_ext_resoutceNotes].[projectName] AS [projectName], 
+    [zz_ext_resoutceNotes].[statu] AS [statu], 
+    [zz_ext_resoutceNotes].[statuName] AS [statuName], 
+    [zz_ext_resoutceNotes].[note] AS [note], 
+    [zz_ext_resoutceNotes].[uploadPerson] AS [uploadPerson], 
+    [zz_ext_resoutceNotes].[username] AS [username], 
+    [zz_ext_resoutceNotes].[dntime] AS [dntime]
+    FROM [dbo].[zz_ext_resoutceNotes] AS [zz_ext_resoutceNotes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="InstancePromotedProperties" EntityType="Self.InstancePromotedProperties" store:Type="Views" store:Schema="System.Activities.DurableInstancing">
+            <DefiningQuery>SELECT 
+    [InstancePromotedProperties].[InstanceId] AS [InstanceId], 
+    [InstancePromotedProperties].[EncodingOption] AS [EncodingOption], 
+    [InstancePromotedProperties].[PromotionName] AS [PromotionName], 
+    [InstancePromotedProperties].[Value33] AS [Value33], 
+    [InstancePromotedProperties].[Value34] AS [Value34], 
+    [InstancePromotedProperties].[Value35] AS [Value35], 
+    [InstancePromotedProperties].[Value36] AS [Value36], 
+    [InstancePromotedProperties].[Value37] AS [Value37], 
+    [InstancePromotedProperties].[Value38] AS [Value38], 
+    [InstancePromotedProperties].[Value39] AS [Value39], 
+    [InstancePromotedProperties].[Value40] AS [Value40], 
+    [InstancePromotedProperties].[Value41] AS [Value41], 
+    [InstancePromotedProperties].[Value42] AS [Value42], 
+    [InstancePromotedProperties].[Value43] AS [Value43], 
+    [InstancePromotedProperties].[Value44] AS [Value44], 
+    [InstancePromotedProperties].[Value45] AS [Value45], 
+    [InstancePromotedProperties].[Value46] AS [Value46], 
+    [InstancePromotedProperties].[Value47] AS [Value47], 
+    [InstancePromotedProperties].[Value48] AS [Value48], 
+    [InstancePromotedProperties].[Value49] AS [Value49], 
+    [InstancePromotedProperties].[Value50] AS [Value50], 
+    [InstancePromotedProperties].[Value51] AS [Value51], 
+    [InstancePromotedProperties].[Value52] AS [Value52], 
+    [InstancePromotedProperties].[Value53] AS [Value53], 
+    [InstancePromotedProperties].[Value54] AS [Value54], 
+    [InstancePromotedProperties].[Value55] AS [Value55], 
+    [InstancePromotedProperties].[Value56] AS [Value56], 
+    [InstancePromotedProperties].[Value57] AS [Value57], 
+    [InstancePromotedProperties].[Value58] AS [Value58], 
+    [InstancePromotedProperties].[Value59] AS [Value59], 
+    [InstancePromotedProperties].[Value60] AS [Value60], 
+    [InstancePromotedProperties].[Value61] AS [Value61], 
+    [InstancePromotedProperties].[Value62] AS [Value62], 
+    [InstancePromotedProperties].[Value63] AS [Value63], 
+    [InstancePromotedProperties].[Value64] AS [Value64]
+    FROM [System.Activities.DurableInstancing].[InstancePromotedProperties] AS [InstancePromotedProperties]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Instances" EntityType="Self.Instances" store:Type="Views" store:Schema="System.Activities.DurableInstancing">
+            <DefiningQuery>SELECT 
+    [Instances].[InstanceId] AS [InstanceId], 
+    [Instances].[PendingTimer] AS [PendingTimer], 
+    [Instances].[CreationTime] AS [CreationTime], 
+    [Instances].[LastUpdatedTime] AS [LastUpdatedTime], 
+    [Instances].[ServiceDeploymentId] AS [ServiceDeploymentId], 
+    [Instances].[SuspensionExceptionName] AS [SuspensionExceptionName], 
+    [Instances].[SuspensionReason] AS [SuspensionReason], 
+    [Instances].[ActiveBookmarks] AS [ActiveBookmarks], 
+    [Instances].[CurrentMachine] AS [CurrentMachine], 
+    [Instances].[LastMachine] AS [LastMachine], 
+    [Instances].[ExecutionStatus] AS [ExecutionStatus], 
+    [Instances].[IsInitialized] AS [IsInitialized], 
+    [Instances].[IsSuspended] AS [IsSuspended], 
+    [Instances].[IsCompleted] AS [IsCompleted], 
+    [Instances].[EncodingOption] AS [EncodingOption], 
+    [Instances].[ReadWritePrimitiveDataProperties] AS [ReadWritePrimitiveDataProperties], 
+    [Instances].[WriteOnlyPrimitiveDataProperties] AS [WriteOnlyPrimitiveDataProperties], 
+    [Instances].[ReadWriteComplexDataProperties] AS [ReadWriteComplexDataProperties], 
+    [Instances].[WriteOnlyComplexDataProperties] AS [WriteOnlyComplexDataProperties], 
+    [Instances].[IdentityName] AS [IdentityName], 
+    [Instances].[IdentityPackage] AS [IdentityPackage], 
+    [Instances].[Build] AS [Build], 
+    [Instances].[Major] AS [Major], 
+    [Instances].[Minor] AS [Minor], 
+    [Instances].[Revision] AS [Revision]
+    FROM [System.Activities.DurableInstancing].[Instances] AS [Instances]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ServiceDeployments" EntityType="Self.ServiceDeployments" store:Type="Views" store:Schema="System.Activities.DurableInstancing">
+            <DefiningQuery>SELECT 
+    [ServiceDeployments].[ServiceDeploymentId] AS [ServiceDeploymentId], 
+    [ServiceDeployments].[SiteName] AS [SiteName], 
+    [ServiceDeployments].[RelativeServicePath] AS [RelativeServicePath], 
+    [ServiceDeployments].[RelativeApplicationPath] AS [RelativeApplicationPath], 
+    [ServiceDeployments].[ServiceName] AS [ServiceName], 
+    [ServiceDeployments].[ServiceNamespace] AS [ServiceNamespace]
+    FROM [System.Activities.DurableInstancing].[ServiceDeployments] AS [ServiceDeployments]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_checkPermission_projectStatus" Association="Self.FK_checkPermission_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="checkPermission" EntitySet="checkPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkPermission_user" Association="Self.FK_checkPermission_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkPermission" EntitySet="checkPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkPerson_projectStatus1" Association="Self.FK_checkPerson_projectStatus1">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="checkPerson" EntitySet="checkPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkPerson_user" Association="Self.FK_checkPerson_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkPerson" EntitySet="checkPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkResult_project" Association="Self.FK_checkResult_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="checkResult" EntitySet="checkResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkResult_user" Association="Self.FK_checkResult_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkResult" EntitySet="checkResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_project" Association="Self.FK_customer_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notice_project" Association="Self.FK_notice_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="notice" EntitySet="notice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notice_projectStatus" Association="Self.FK_notice_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="notice" EntitySet="notice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notice_user" Association="Self.FK_notice_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="notice" EntitySet="notice" />
+          </AssociationSet>
+          <AssociationSet Name="FK_permission_department" Association="Self.FK_permission_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="permission" EntitySet="permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_permission_projectStatus" Association="Self.FK_permission_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="permission" EntitySet="permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_productInfo_project" Association="Self.FK_productInfo_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="productInfo" EntitySet="productInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_projectStatus" Association="Self.FK_project_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="project" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_user" Association="Self.FK_project_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="project" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectStatuChangeInfo_projectStatus" Association="Self.FK_projectStatuChangeInfo_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectStatuChangeInfo_user" Association="Self.FK_projectStatuChangeInfo_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectStatuInfo_project" Association="Self.FK_projectStatuInfo_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resourcePath_project" Association="Self.FK_resourcePath_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resourcePath_projectStatus" Association="Self.FK_resourcePath_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resourcePath_user" Association="Self.FK_resourcePath_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="Self.FK_user_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="JingMeiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="JingMeiEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="AssociateKeys" ReturnType="Collection(JingMeiModel.AssociateKeys_Result)">
+            <Parameter Name="surrogateInstanceId" Mode="In" Type="Int64" />
+            <Parameter Name="keysToAssociate" Mode="In" Type="String" />
+            <Parameter Name="concatenatedKeyProperties" Mode="In" Type="Binary" />
+            <Parameter Name="encodingOption" Mode="In" Type="Byte" />
+            <Parameter Name="singleKeyId" Mode="In" Type="Guid" />
+          </FunctionImport>
+          <FunctionImport Name="CompleteKeys" ReturnType="Collection(JingMeiModel.CompleteKeys_Result)">
+            <Parameter Name="surrogateInstanceId" Mode="In" Type="Int64" />
+            <Parameter Name="keysToComplete" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateInstance" ReturnType="Collection(Int32)">
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="serviceDeploymentId" Mode="In" Type="Int64" />
+            <Parameter Name="surrogateInstanceId" Mode="InOut" Type="Int64" />
+            <Parameter Name="result" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CreateLockOwner" ReturnType="Collection(Int32)">
+            <Parameter Name="lockOwnerId" Mode="In" Type="Guid" />
+            <Parameter Name="lockTimeout" Mode="In" Type="Int32" />
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="enqueueCommand" Mode="In" Type="Boolean" />
+            <Parameter Name="deleteInstanceOnCompletion" Mode="In" Type="Boolean" />
+            <Parameter Name="primitiveLockOwnerData" Mode="In" Type="Binary" />
+            <Parameter Name="complexLockOwnerData" Mode="In" Type="Binary" />
+            <Parameter Name="writeOnlyPrimitiveLockOwnerData" Mode="In" Type="Binary" />
+            <Parameter Name="writeOnlyComplexLockOwnerData" Mode="In" Type="Binary" />
+            <Parameter Name="encodingOption" Mode="In" Type="Byte" />
+            <Parameter Name="machineName" Mode="In" Type="String" />
+            <Parameter Name="identityMetadata" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="CreateServiceDeployment" ReturnType="Collection(JingMeiModel.CreateServiceDeployment_Result)">
+            <Parameter Name="serviceDeploymentHash" Mode="In" Type="Guid" />
+            <Parameter Name="siteName" Mode="In" Type="String" />
+            <Parameter Name="relativeServicePath" Mode="In" Type="String" />
+            <Parameter Name="relativeApplicationPath" Mode="In" Type="String" />
+            <Parameter Name="serviceName" Mode="In" Type="String" />
+            <Parameter Name="serviceNamespace" Mode="In" Type="String" />
+            <Parameter Name="serviceDeploymentId" Mode="InOut" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteInstance">
+          <Parameter Name="surrogateInstanceId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteLockOwner" ReturnType="Collection(Int32)">
+          <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="DetectRunnableInstances" ReturnType="Collection(JingMeiModel.DetectRunnableInstances_Result)">
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="ExtendLock" ReturnType="Collection(Int32)">
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="lockTimeout" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="FreeKeys" ReturnType="Collection(JingMeiModel.FreeKeys_Result)">
+            <Parameter Name="surrogateInstanceId" Mode="In" Type="Int64" />
+            <Parameter Name="keysToFree" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetActivatableWorkflowsActivationParameters" ReturnType="Collection(Int32)">
+          <Parameter Name="machineName" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GetWorkflowInstanceStoreVersion" ReturnType="Collection(JingMeiModel.GetWorkflowInstanceStoreVersion_Result)" />
+          <FunctionImport Name="InsertDefinitionIdentity">
+          <Parameter Name="identityMetadata" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="InsertPromotedProperties">
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="promotionName" Mode="In" Type="String" />
+            <Parameter Name="value33" Mode="In" Type="Binary" />
+            <Parameter Name="value34" Mode="In" Type="Binary" />
+            <Parameter Name="value35" Mode="In" Type="Binary" />
+            <Parameter Name="value36" Mode="In" Type="Binary" />
+            <Parameter Name="value37" Mode="In" Type="Binary" />
+            <Parameter Name="value38" Mode="In" Type="Binary" />
+            <Parameter Name="value39" Mode="In" Type="Binary" />
+            <Parameter Name="value40" Mode="In" Type="Binary" />
+            <Parameter Name="value41" Mode="In" Type="Binary" />
+            <Parameter Name="value42" Mode="In" Type="Binary" />
+            <Parameter Name="value43" Mode="In" Type="Binary" />
+            <Parameter Name="value44" Mode="In" Type="Binary" />
+            <Parameter Name="value45" Mode="In" Type="Binary" />
+            <Parameter Name="value46" Mode="In" Type="Binary" />
+            <Parameter Name="value47" Mode="In" Type="Binary" />
+            <Parameter Name="value48" Mode="In" Type="Binary" />
+            <Parameter Name="value49" Mode="In" Type="Binary" />
+            <Parameter Name="value50" Mode="In" Type="Binary" />
+            <Parameter Name="value51" Mode="In" Type="Binary" />
+            <Parameter Name="value52" Mode="In" Type="Binary" />
+            <Parameter Name="value53" Mode="In" Type="Binary" />
+            <Parameter Name="value54" Mode="In" Type="Binary" />
+            <Parameter Name="value55" Mode="In" Type="Binary" />
+            <Parameter Name="value56" Mode="In" Type="Binary" />
+            <Parameter Name="value57" Mode="In" Type="Binary" />
+            <Parameter Name="value58" Mode="In" Type="Binary" />
+            <Parameter Name="value59" Mode="In" Type="Binary" />
+            <Parameter Name="value60" Mode="In" Type="Binary" />
+            <Parameter Name="value61" Mode="In" Type="Binary" />
+            <Parameter Name="value62" Mode="In" Type="Binary" />
+            <Parameter Name="value63" Mode="In" Type="Binary" />
+            <Parameter Name="value64" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="InsertRunnableInstanceEntry">
+            <Parameter Name="surrogateInstanceId" Mode="In" Type="Int64" />
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="serviceDeploymentId" Mode="In" Type="Int64" />
+            <Parameter Name="isSuspended" Mode="In" Type="Boolean" />
+            <Parameter Name="isReadyToRun" Mode="In" Type="Boolean" />
+            <Parameter Name="pendingTimer" Mode="In" Type="DateTime" />
+            <Parameter Name="surrogateIdentityId" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="LoadInstance" ReturnType="Collection(Int32)">
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="operationType" Mode="In" Type="Byte" />
+            <Parameter Name="handleInstanceVersion" Mode="In" Type="Int64" />
+            <Parameter Name="handleIsBoundToLock" Mode="In" Type="Boolean" />
+            <Parameter Name="keyToLoadBy" Mode="In" Type="Guid" />
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="keysToAssociate" Mode="In" Type="String" />
+            <Parameter Name="encodingOption" Mode="In" Type="Byte" />
+            <Parameter Name="concatenatedKeyProperties" Mode="In" Type="Binary" />
+            <Parameter Name="singleKeyId" Mode="In" Type="Guid" />
+            <Parameter Name="operationTimeout" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="LockInstance" ReturnType="Collection(Int32)">
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="handleInstanceVersion" Mode="In" Type="Int64" />
+            <Parameter Name="handleIsBoundToLock" Mode="In" Type="Boolean" />
+            <Parameter Name="surrogateInstanceId" Mode="InOut" Type="Int64" />
+            <Parameter Name="lockVersion" Mode="InOut" Type="Int64" />
+            <Parameter Name="result" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="RecoverInstanceLocks" />
+          <FunctionImport Name="SaveInstance" ReturnType="Collection(Int32)">
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="handleInstanceVersion" Mode="In" Type="Int64" />
+            <Parameter Name="handleIsBoundToLock" Mode="In" Type="Boolean" />
+            <Parameter Name="primitiveDataProperties" Mode="In" Type="Binary" />
+            <Parameter Name="complexDataProperties" Mode="In" Type="Binary" />
+            <Parameter Name="writeOnlyPrimitiveDataProperties" Mode="In" Type="Binary" />
+            <Parameter Name="writeOnlyComplexDataProperties" Mode="In" Type="Binary" />
+            <Parameter Name="metadataProperties" Mode="In" Type="Binary" />
+            <Parameter Name="metadataIsConsistent" Mode="In" Type="Boolean" />
+            <Parameter Name="encodingOption" Mode="In" Type="Byte" />
+            <Parameter Name="timerDurationMilliseconds" Mode="In" Type="Int64" />
+            <Parameter Name="suspensionStateChange" Mode="In" Type="Byte" />
+            <Parameter Name="suspensionReason" Mode="In" Type="String" />
+            <Parameter Name="suspensionExceptionName" Mode="In" Type="String" />
+            <Parameter Name="keysToAssociate" Mode="In" Type="String" />
+            <Parameter Name="keysToComplete" Mode="In" Type="String" />
+            <Parameter Name="keysToFree" Mode="In" Type="String" />
+            <Parameter Name="concatenatedKeyProperties" Mode="In" Type="Binary" />
+            <Parameter Name="unlockInstance" Mode="In" Type="Boolean" />
+            <Parameter Name="isReadyToRun" Mode="In" Type="Boolean" />
+            <Parameter Name="isCompleted" Mode="In" Type="Boolean" />
+            <Parameter Name="singleKeyId" Mode="In" Type="Guid" />
+            <Parameter Name="lastMachineRunOn" Mode="In" Type="String" />
+            <Parameter Name="executionStatus" Mode="In" Type="String" />
+            <Parameter Name="blockingBookmarks" Mode="In" Type="String" />
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="serviceDeploymentId" Mode="In" Type="Int64" />
+            <Parameter Name="operationTimeout" Mode="In" Type="Int32" />
+            <Parameter Name="identityMetadata" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="TryLoadRunnableInstance" ReturnType="Collection(JingMeiModel.TryLoadRunnableInstance_Result)">
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="workflowHostType" Mode="In" Type="Guid" />
+            <Parameter Name="operationType" Mode="In" Type="Byte" />
+            <Parameter Name="handleInstanceVersion" Mode="In" Type="Int64" />
+            <Parameter Name="handleIsBoundToLock" Mode="In" Type="Boolean" />
+            <Parameter Name="encodingOption" Mode="In" Type="Byte" />
+            <Parameter Name="operationTimeout" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UnlockInstance">
+            <Parameter Name="surrogateLockOwnerId" Mode="In" Type="Int64" />
+            <Parameter Name="instanceId" Mode="In" Type="Guid" />
+            <Parameter Name="handleInstanceVersion" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <EntitySet Name="checkPerson" EntityType="JingMeiModel.checkPerson" />
+          <EntitySet Name="checkResult" EntityType="JingMeiModel.checkResult" />
+          <EntitySet Name="customer" EntityType="JingMeiModel.customer" />
+          <EntitySet Name="department" EntityType="JingMeiModel.department" />
+          <EntitySet Name="project" EntityType="JingMeiModel.project" />
+          <EntitySet Name="projectStatus" EntityType="JingMeiModel.projectStatus" />
+          <EntitySet Name="user" EntityType="JingMeiModel.user" />
+          <EntitySet Name="DefinitionIdentityTable" EntityType="JingMeiModel.DefinitionIdentityTable" />
+          <EntitySet Name="IdentityOwnerTable" EntityType="JingMeiModel.IdentityOwnerTable" />
+          <EntitySet Name="InstanceMetadataChangesTable" EntityType="JingMeiModel.InstanceMetadataChangesTable" />
+          <EntitySet Name="InstancePromotedPropertiesTable" EntityType="JingMeiModel.InstancePromotedPropertiesTable" />
+          <EntitySet Name="InstancesTable" EntityType="JingMeiModel.InstancesTable" />
+          <EntitySet Name="KeysTable" EntityType="JingMeiModel.KeysTable" />
+          <EntitySet Name="LockOwnersTable" EntityType="JingMeiModel.LockOwnersTable" />
+          <EntitySet Name="RunnableInstancesTable" EntityType="JingMeiModel.RunnableInstancesTable" />
+          <EntitySet Name="ServiceDeploymentsTable" EntityType="JingMeiModel.ServiceDeploymentsTable" />
+          <EntitySet Name="SqlWorkflowInstanceStoreVersionTable" EntityType="JingMeiModel.SqlWorkflowInstanceStoreVersionTable" />
+          <EntitySet Name="InstancePromotedProperties" EntityType="JingMeiModel.InstancePromotedProperties" />
+          <EntitySet Name="Instances" EntityType="JingMeiModel.Instances" />
+          <EntitySet Name="ServiceDeployments" EntityType="JingMeiModel.ServiceDeployments" />
+          <AssociationSet Name="FK_checkPerson_projectStatus1" Association="JingMeiModel.FK_checkPerson_projectStatus1">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="checkPerson" EntitySet="checkPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkPerson_user" Association="JingMeiModel.FK_checkPerson_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkPerson" EntitySet="checkPerson" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkResult_project" Association="JingMeiModel.FK_checkResult_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="checkResult" EntitySet="checkResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkResult_user" Association="JingMeiModel.FK_checkResult_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkResult" EntitySet="checkResult" />
+          </AssociationSet>
+          <AssociationSet Name="FK_customer_project" Association="JingMeiModel.FK_customer_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="customer" EntitySet="customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_department" Association="JingMeiModel.FK_user_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="user" EntitySet="user" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_projectStatus" Association="JingMeiModel.FK_project_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="project" EntitySet="project" />
+          </AssociationSet>
+          <AssociationSet Name="FK_project_user" Association="JingMeiModel.FK_project_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="project" EntitySet="project" />
+          </AssociationSet>
+          <EntitySet Name="zz_ext_resoutceInfo" EntityType="JingMeiModel.zz_ext_resoutceInfo" />
+          <EntitySet Name="checkPermission" EntityType="JingMeiModel.checkPermission" />
+          <AssociationSet Name="FK_checkPermission_projectStatus" Association="JingMeiModel.FK_checkPermission_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="checkPermission" EntitySet="checkPermission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_checkPermission_user" Association="JingMeiModel.FK_checkPermission_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="checkPermission" EntitySet="checkPermission" />
+          </AssociationSet>
+          <EntitySet Name="projectInfo" EntityType="JingMeiModel.projectInfo" />
+          <EntitySet Name="permission" EntityType="JingMeiModel.permission" />
+          <AssociationSet Name="FK_permission_department" Association="JingMeiModel.FK_permission_department">
+            <End Role="department" EntitySet="department" />
+            <End Role="permission" EntitySet="permission" />
+          </AssociationSet>
+          <AssociationSet Name="FK_permission_projectStatus" Association="JingMeiModel.FK_permission_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="permission" EntitySet="permission" />
+          </AssociationSet>
+          <EntitySet Name="resourcePath" EntityType="JingMeiModel.resourcePath" />
+          <AssociationSet Name="FK_resourcePath_project" Association="JingMeiModel.FK_resourcePath_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resourcePath_projectStatus" Association="JingMeiModel.FK_resourcePath_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <AssociationSet Name="FK_resourcePath_user" Association="JingMeiModel.FK_resourcePath_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="resourcePath" EntitySet="resourcePath" />
+          </AssociationSet>
+          <EntitySet Name="zz_ext_resoutceNotes" EntityType="JingMeiModel.zz_ext_resoutceNotes" />
+          <FunctionImport Name="getNewProjectID" ReturnType="Collection(String)" >
+          <Parameter Name="newProjectID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getNewProjectID1">
+          <Parameter Name="newProjectID" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="getNewProjectID2">
+          <Parameter Name="newProjectID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="projectIDTemps" EntityType="JingMeiModel.projectIDTemp" />
+          <FunctionImport Name="getNewProjectID3" ReturnType="Collection(Int32)">
+          <Parameter Name="newProjectID" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="projectShowInfoes" EntityType="JingMeiModel.projectShowInfo" />
+          <EntitySet Name="notices" EntityType="JingMeiModel.notice" />
+          <AssociationSet Name="FK_notice_project" Association="JingMeiModel.FK_notice_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="notice" EntitySet="notices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notice_projectStatus" Association="JingMeiModel.FK_notice_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="notice" EntitySet="notices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_notice_user" Association="JingMeiModel.FK_notice_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="notice" EntitySet="notices" />
+          </AssociationSet>
+          <EntitySet Name="maxStatuChanges" EntityType="JingMeiModel.maxStatuChange" />
+          <EntitySet Name="projectStatuChangeInfoes" EntityType="JingMeiModel.projectStatuChangeInfo" />
+          <AssociationSet Name="FK_projectStatuInfo_project" Association="JingMeiModel.FK_projectStatuInfo_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectStatuChangeInfo_projectStatus" Association="JingMeiModel.FK_projectStatuChangeInfo_projectStatus">
+            <End Role="projectStatus" EntitySet="projectStatus" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_projectStatuChangeInfo_user" Association="JingMeiModel.FK_projectStatuChangeInfo_user">
+            <End Role="user" EntitySet="user" />
+            <End Role="projectStatuChangeInfo" EntitySet="projectStatuChangeInfoes" />
+          </AssociationSet>
+          <EntitySet Name="productInfoes" EntityType="JingMeiModel.productInfo" />
+          <AssociationSet Name="FK_productInfo_project" Association="JingMeiModel.FK_productInfo_project">
+            <End Role="project" EntitySet="project" />
+            <End Role="productInfo" EntitySet="productInfoes" />
+          </AssociationSet>
+          </EntityContainer>
+        <ComplexType Name="AssociateKeys_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="Guid" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CompleteKeys_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="Guid" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="CreateServiceDeployment_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="Int64" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="DetectRunnableInstances_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="DateTime" Name="Column1" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="Column2" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="FreeKeys_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="Guid" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="GetWorkflowInstanceStoreVersion_Result">
+          <Property Type="Int64" Name="Major" Nullable="false" />
+          <Property Type="Int64" Name="Minor" Nullable="false" />
+          <Property Type="Int64" Name="Build" Nullable="false" />
+          <Property Type="Int64" Name="Revision" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="TryLoadRunnableInstance_Result">
+          <Property Type="Int32" Name="Result" Nullable="false" />
+          <Property Type="Boolean" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <EntityType Name="checkPerson">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="statusID" Type="Int32" Nullable="false" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="projectStatus" Relationship="JingMeiModel.FK_checkPerson_projectStatus1" FromRole="checkPerson" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_checkPerson_user" FromRole="checkPerson" ToRole="user" />
+        </EntityType>
+        <EntityType Name="checkResult">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="checkPersonID" Type="Int32" Nullable="false" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_checkResult_project" FromRole="checkResult" ToRole="project" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_checkResult_user" FromRole="checkResult" ToRole="user" />
+        </EntityType>
+        <EntityType Name="customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="postision" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="14" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_customer_project" FromRole="customer" ToRole="project" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmentName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_user_department" FromRole="department" ToRole="user" />
+          <NavigationProperty Name="permission" Relationship="JingMeiModel.FK_permission_department" FromRole="department" ToRole="permission" />
+          </EntityType>
+        <EntityType Name="project">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descriptID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="projectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="currentStatuID" Type="Int32" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="createPerson" Type="Int32" />
+          <Property Name="targetPrice" Type="Double" />
+          <Property Name="annualDemand" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="lifeCycle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="paymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="productType" Type="Int32" />
+          <Property Name="demoFinishTime" Type="DateTime" Precision="3" />
+          <Property Name="testFinishTime" Type="DateTime" Precision="3" />
+          <Property Name="smallAmountFinishTime" Type="DateTime" Precision="3" />
+          <Property Name="batchFinishTime" Type="DateTime" Precision="3" />
+          <Property Name="instanceID" Type="String" MaxLength="128" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="checkResult" Relationship="JingMeiModel.FK_checkResult_project" FromRole="project" ToRole="checkResult" />
+          <NavigationProperty Name="customer" Relationship="JingMeiModel.FK_customer_project" FromRole="project" ToRole="customer" />
+          <NavigationProperty Name="projectStatus" Relationship="JingMeiModel.FK_project_projectStatus" FromRole="project" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_project_user" FromRole="project" ToRole="user" />
+          <Property Name="customerLH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="resourcePath" Relationship="JingMeiModel.FK_resourcePath_project" FromRole="project" ToRole="resourcePath" />
+          <NavigationProperty Name="notices" Relationship="JingMeiModel.FK_notice_project" FromRole="project" ToRole="notice" />
+          <NavigationProperty Name="projectStatuChangeInfoes" Relationship="JingMeiModel.FK_projectStatuInfo_project" FromRole="project" ToRole="projectStatuChangeInfo" />
+          <NavigationProperty Name="productInfoes" Relationship="JingMeiModel.FK_productInfo_project" FromRole="project" ToRole="productInfo" />
+        </EntityType>
+        <EntityType Name="projectStatus">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="checkPerson" Relationship="JingMeiModel.FK_checkPerson_projectStatus1" FromRole="projectStatus" ToRole="checkPerson" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_project_projectStatus" FromRole="projectStatus" ToRole="project" />
+          <NavigationProperty Name="checkPermission" Relationship="JingMeiModel.FK_checkPermission_projectStatus" FromRole="projectStatus" ToRole="checkPermission" />
+          <NavigationProperty Name="permission" Relationship="JingMeiModel.FK_permission_projectStatus" FromRole="projectStatus" ToRole="permission" />
+          <NavigationProperty Name="resourcePath" Relationship="JingMeiModel.FK_resourcePath_projectStatus" FromRole="projectStatus" ToRole="resourcePath" />
+          <NavigationProperty Name="notices" Relationship="JingMeiModel.FK_notice_projectStatus" FromRole="projectStatus" ToRole="notice" />
+          <NavigationProperty Name="projectStatuChangeInfoes" Relationship="JingMeiModel.FK_projectStatuChangeInfo_projectStatus" FromRole="projectStatus" ToRole="projectStatuChangeInfo" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="pwd" Type="String" Nullable="false" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="statu" Type="Int32" Nullable="false" />
+          <Property Name="departmentID" Type="Int32" Nullable="false" />
+          <Property Name="isleader" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="checkPerson" Relationship="JingMeiModel.FK_checkPerson_user" FromRole="user" ToRole="checkPerson" />
+          <NavigationProperty Name="checkResult" Relationship="JingMeiModel.FK_checkResult_user" FromRole="user" ToRole="checkResult" />
+          <NavigationProperty Name="department" Relationship="JingMeiModel.FK_user_department" FromRole="user" ToRole="department" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_project_user" FromRole="user" ToRole="project" />
+          <NavigationProperty Name="checkPermission" Relationship="JingMeiModel.FK_checkPermission_user" FromRole="user" ToRole="checkPermission" />
+          <NavigationProperty Name="resourcePath" Relationship="JingMeiModel.FK_resourcePath_user" FromRole="user" ToRole="resourcePath" />
+          <NavigationProperty Name="notices" Relationship="JingMeiModel.FK_notice_user" FromRole="user" ToRole="notice" />
+          <NavigationProperty Name="projectStatuChangeInfoes" Relationship="JingMeiModel.FK_projectStatuChangeInfo_user" FromRole="user" ToRole="projectStatuChangeInfo" />
+          </EntityType>
+        <EntityType Name="DefinitionIdentityTable">
+          <Key>
+            <PropertyRef Name="SurrogateIdentityId" />
+          </Key>
+          <Property Name="SurrogateIdentityId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DefinitionIdentityHash" Type="Guid" Nullable="false" />
+          <Property Name="DefinitionIdentityAnyRevisionHash" Type="Guid" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Package" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Build" Type="Int64" />
+          <Property Name="Major" Type="Int64" />
+          <Property Name="Minor" Type="Int64" />
+          <Property Name="Revision" Type="Int64" />
+        </EntityType>
+        <EntityType Name="IdentityOwnerTable">
+          <Key>
+            <PropertyRef Name="SurrogateIdentityId" />
+            <PropertyRef Name="SurrogateLockOwnerId" />
+          </Key>
+          <Property Name="SurrogateIdentityId" Type="Int64" Nullable="false" />
+          <Property Name="SurrogateLockOwnerId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InstanceMetadataChangesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+            <PropertyRef Name="ChangeTime" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="Int64" Nullable="false" />
+          <Property Name="ChangeTime" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EncodingOption" Type="Byte" Nullable="false" />
+          <Property Name="Change" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InstancePromotedPropertiesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+            <PropertyRef Name="PromotionName" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="Int64" Nullable="false" />
+          <Property Name="PromotionName" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Value33" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value34" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value35" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value36" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value37" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value38" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value39" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value40" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value41" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value42" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value43" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value44" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value45" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value46" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value47" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value48" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value49" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value50" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value51" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value52" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value53" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value54" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value55" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value56" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value57" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value58" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value59" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value60" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value61" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value62" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value63" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value64" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InstancesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SurrogateInstanceId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurrogateLockOwnerId" Type="Int64" />
+          <Property Name="PrimitiveDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ComplexDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyPrimitiveDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyComplexDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="MetadataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="DataEncodingOption" Type="Byte" />
+          <Property Name="MetadataEncodingOption" Type="Byte" />
+          <Property Name="Version" Type="Int64" Nullable="false" />
+          <Property Name="PendingTimer" Type="DateTime" Precision="3" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+          <Property Name="WorkflowHostType" Type="Guid" />
+          <Property Name="ServiceDeploymentId" Type="Int64" />
+          <Property Name="SuspensionExceptionName" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="SuspensionReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BlockingBookmarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastMachineRunOn" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ExecutionStatus" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="IsInitialized" Type="Boolean" />
+          <Property Name="IsSuspended" Type="Boolean" />
+          <Property Name="IsReadyToRun" Type="Boolean" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="SurrogateIdentityId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KeysTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SurrogateKeyId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SurrogateInstanceId" Type="Int64" />
+          <Property Name="EncodingOption" Type="Byte" />
+          <Property Name="Properties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IsAssociated" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="LockOwnersTable">
+          <Key>
+            <PropertyRef Name="SurrogateLockOwnerId" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="SurrogateLockOwnerId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LockExpiration" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="WorkflowHostType" Type="Guid" />
+          <Property Name="MachineName" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="EnqueueCommand" Type="Boolean" Nullable="false" />
+          <Property Name="DeletesInstanceOnCompletion" Type="Boolean" Nullable="false" />
+          <Property Name="PrimitiveLockOwnerData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ComplexLockOwnerData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyPrimitiveLockOwnerData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyComplexLockOwnerData" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="EncodingOption" Type="Byte" />
+          <Property Name="WorkflowIdentityFilter" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RunnableInstancesTable">
+          <Key>
+            <PropertyRef Name="SurrogateInstanceId" />
+          </Key>
+          <Property Name="SurrogateInstanceId" Type="Int64" Nullable="false" />
+          <Property Name="WorkflowHostType" Type="Guid" />
+          <Property Name="ServiceDeploymentId" Type="Int64" />
+          <Property Name="RunnableTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="SurrogateIdentityId" Type="Int64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ServiceDeploymentsTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ServiceDeploymentHash" Type="Guid" Nullable="false" />
+          <Property Name="SiteName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelativeServicePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelativeApplicationPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceNamespace" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SqlWorkflowInstanceStoreVersionTable">
+          <Key>
+            <PropertyRef Name="Major" />
+            <PropertyRef Name="Minor" />
+            <PropertyRef Name="Build" />
+            <PropertyRef Name="Revision" />
+          </Key>
+          <Property Name="Major" Type="Int64" Nullable="false" />
+          <Property Name="Minor" Type="Int64" Nullable="false" />
+          <Property Name="Build" Type="Int64" Nullable="false" />
+          <Property Name="Revision" Type="Int64" Nullable="false" />
+          <Property Name="LastUpdated" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="InstancePromotedProperties">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+            <PropertyRef Name="PromotionName" />
+          </Key>
+          <Property Name="InstanceId" Type="Guid" Nullable="false" />
+          <Property Name="EncodingOption" Type="Byte" />
+          <Property Name="PromotionName" Type="String" Nullable="false" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Value33" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value34" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value35" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value36" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value37" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value38" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value39" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value40" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value41" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value42" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value43" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value44" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value45" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value46" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value47" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value48" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value49" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value50" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value51" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value52" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value53" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value54" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value55" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value56" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value57" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value58" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value59" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value60" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value61" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value62" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value63" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Value64" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Instances">
+          <Key>
+            <PropertyRef Name="InstanceId" />
+            <PropertyRef Name="CreationTime" />
+          </Key>
+          <Property Name="InstanceId" Type="Guid" Nullable="false" />
+          <Property Name="PendingTimer" Type="DateTime" Precision="3" />
+          <Property Name="CreationTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LastUpdatedTime" Type="DateTime" Precision="3" />
+          <Property Name="ServiceDeploymentId" Type="Int64" />
+          <Property Name="SuspensionExceptionName" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="SuspensionReason" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ActiveBookmarks" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentMachine" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="LastMachine" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="ExecutionStatus" Type="String" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="IsInitialized" Type="Boolean" />
+          <Property Name="IsSuspended" Type="Boolean" />
+          <Property Name="IsCompleted" Type="Boolean" />
+          <Property Name="EncodingOption" Type="Byte" />
+          <Property Name="ReadWritePrimitiveDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyPrimitiveDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="ReadWriteComplexDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="WriteOnlyComplexDataProperties" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="IdentityName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IdentityPackage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Build" Type="Int64" />
+          <Property Name="Major" Type="Int64" />
+          <Property Name="Minor" Type="Int64" />
+          <Property Name="Revision" Type="Int64" />
+        </EntityType>
+        <EntityType Name="ServiceDeployments">
+          <Key>
+            <PropertyRef Name="ServiceDeploymentId" />
+            <PropertyRef Name="SiteName" />
+            <PropertyRef Name="RelativeServicePath" />
+            <PropertyRef Name="RelativeApplicationPath" />
+            <PropertyRef Name="ServiceName" />
+            <PropertyRef Name="ServiceNamespace" />
+          </Key>
+          <Property Name="ServiceDeploymentId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelativeServicePath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RelativeApplicationPath" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceName" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ServiceNamespace" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_checkPerson_projectStatus1">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.checkPerson" Role="checkPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPerson">
+              <PropertyRef Name="statusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkPerson_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="1" />
+          <End Type="JingMeiModel.checkPerson" Role="checkPerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPerson">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkResult_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.checkResult" Role="checkResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkResult">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkResult_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="1" />
+          <End Type="JingMeiModel.checkResult" Role="checkResult" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkResult">
+              <PropertyRef Name="checkPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_customer_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.customer" Role="customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="customer">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_department">
+          <End Type="JingMeiModel.department" Role="department" Multiplicity="1" />
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="currentStatuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_project_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="project">
+              <PropertyRef Name="createPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="zz_ext_resoutceInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="statuName" />
+            <PropertyRef Name="filePath" />
+            <PropertyRef Name="uploadPerson" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="dntime" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="projectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statu" Type="Int32" Nullable="false" />
+          <Property Name="statuName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="filePath" Type="String" Nullable="false" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="uploadPerson" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dntime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="checkPermission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <Property Name="projectStatuID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="projectStatus" Relationship="JingMeiModel.FK_checkPermission_projectStatus" FromRole="checkPermission" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_checkPermission_user" FromRole="checkPermission" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_checkPermission_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.checkPermission" Role="checkPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPermission">
+              <PropertyRef Name="projectStatuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_checkPermission_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="1" />
+          <End Type="JingMeiModel.checkPermission" Role="checkPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="checkPermission">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="projectInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="username" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descriptID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="projectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customername" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customerLH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="instanceID" Type="String" MaxLength="128" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="permission">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="departmentID" Type="Int32" Nullable="false" />
+          <Property Name="projectStatusID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="department" Relationship="JingMeiModel.FK_permission_department" FromRole="permission" ToRole="department" />
+          <NavigationProperty Name="projectStatus" Relationship="JingMeiModel.FK_permission_projectStatus" FromRole="permission" ToRole="projectStatus" />
+          <Property Name="permissions" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_permission_department">
+          <End Type="JingMeiModel.department" Role="department" Multiplicity="1" />
+          <End Type="JingMeiModel.permission" Role="permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="department">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permission">
+              <PropertyRef Name="departmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_permission_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.permission" Role="permission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="permission">
+              <PropertyRef Name="projectStatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="resourcePath">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statu" Type="Int32" Nullable="false" />
+          <Property Name="filePath" Type="String" MaxLength="240" FixedLength="false" Unicode="false" />
+          <Property Name="uploadPerson" Type="Int32" Nullable="false" />
+          <Property Name="dntime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_resourcePath_project" FromRole="resourcePath" ToRole="project" />
+          <NavigationProperty Name="projectStatus" Relationship="JingMeiModel.FK_resourcePath_projectStatus" FromRole="resourcePath" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_resourcePath_user" FromRole="resourcePath" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_resourcePath_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.resourcePath" Role="resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resourcePath_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.resourcePath" Role="resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="statu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_resourcePath_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="1" />
+          <End Type="JingMeiModel.resourcePath" Role="resourcePath" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="resourcePath">
+              <PropertyRef Name="uploadPerson" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="zz_ext_resoutceNotes">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="statuName" />
+            <PropertyRef Name="uploadPerson" />
+            <PropertyRef Name="username" />
+            <PropertyRef Name="dntime" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="projectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statu" Type="Int32" Nullable="false" />
+          <Property Name="statuName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="note" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="uploadPerson" Type="Int32" Nullable="false" />
+          <Property Name="username" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dntime" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="projectIDTemp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="Int32" Nullable="false" />
+          <Property Name="useDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="projectShowInfo">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="currentStatuID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="createPersonName" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="instanceID" Type="String" MaxLength="128" FixedLength="true" Unicode="true" />
+          <Property Name="projectName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="customerLH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="currentStatuID" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <Property Name="createPerson" Type="Int32" />
+          <Property Name="createPersonName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="notice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="userID" Type="Int32" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="projectStatu" Type="Int32" Nullable="false" />
+          <Property Name="statu" Type="Boolean" Nullable="false" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="readtime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_notice_project" FromRole="notice" ToRole="project" />
+          <NavigationProperty Name="projectStatu1" Relationship="JingMeiModel.FK_notice_projectStatus" FromRole="notice" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_notice_user" FromRole="notice" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_notice_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.notice" Role="notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notice_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.notice" Role="notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="projectStatu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_notice_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="0..1" />
+          <End Type="JingMeiModel.notice" Role="notice" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="notice">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="maxStatuChange">
+          <Key>
+            <PropertyRef Name="projectID" />
+            <PropertyRef Name="statu" />
+            <PropertyRef Name="time" />
+            <PropertyRef Name="userID" />
+          </Key>
+          <Property Name="projectID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Name="statu" Nullable="false" Type="Int32" />
+          <Property Name="time" Nullable="false" Precision="3" Type="DateTime" />
+          <Property Name="userID" Nullable="false" Type="Int32" />
+        </EntityType>
+        <EntityType Name="projectStatuChangeInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="statu" Type="Int32" Nullable="false" />
+          <Property Name="time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="userID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_projectStatuInfo_project" FromRole="projectStatuChangeInfo" ToRole="project" />
+          <NavigationProperty Name="projectStatu" Relationship="JingMeiModel.FK_projectStatuChangeInfo_projectStatus" FromRole="projectStatuChangeInfo" ToRole="projectStatus" />
+          <NavigationProperty Name="user" Relationship="JingMeiModel.FK_projectStatuChangeInfo_user" FromRole="projectStatuChangeInfo" ToRole="user" />
+        </EntityType>
+        <Association Name="FK_projectStatuInfo_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.projectStatuChangeInfo" Role="projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectStatuChangeInfo_projectStatus">
+          <End Type="JingMeiModel.projectStatus" Role="projectStatus" Multiplicity="1" />
+          <End Type="JingMeiModel.projectStatuChangeInfo" Role="projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="projectStatus">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="statu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_projectStatuChangeInfo_user">
+          <End Type="JingMeiModel.user" Role="user" Multiplicity="1" />
+          <End Type="JingMeiModel.projectStatuChangeInfo" Role="projectStatuChangeInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="projectStatuChangeInfo">
+              <PropertyRef Name="userID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="productInfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="projectID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="productID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="innerID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="project" Relationship="JingMeiModel.FK_productInfo_project" FromRole="productInfo" ToRole="project" />
+        </EntityType>
+        <Association Name="FK_productInfo_project">
+          <End Type="JingMeiModel.project" Role="project" Multiplicity="1" />
+          <End Type="JingMeiModel.productInfo" Role="productInfo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="project">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="productInfo">
+              <PropertyRef Name="projectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="JingMeiModelStoreContainer" CdmEntityContainer="JingMeiEntities">
+          <FunctionImportMapping FunctionImportName="AssociateKeys" FunctionName="JingMeiModel.Store.AssociateKeys">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.AssociateKeys_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CompleteKeys" FunctionName="JingMeiModel.Store.CompleteKeys">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.CompleteKeys_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CreateInstance" FunctionName="JingMeiModel.Store.CreateInstance" />
+          <FunctionImportMapping FunctionImportName="CreateLockOwner" FunctionName="JingMeiModel.Store.CreateLockOwner" />
+          <FunctionImportMapping FunctionImportName="CreateServiceDeployment" FunctionName="JingMeiModel.Store.CreateServiceDeployment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.CreateServiceDeployment_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="DeleteInstance" FunctionName="JingMeiModel.Store.DeleteInstance" />
+          <FunctionImportMapping FunctionImportName="DeleteLockOwner" FunctionName="JingMeiModel.Store.DeleteLockOwner" />
+          <FunctionImportMapping FunctionImportName="DetectRunnableInstances" FunctionName="JingMeiModel.Store.DetectRunnableInstances">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.DetectRunnableInstances_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+                <ScalarProperty Name="Column2" ColumnName="Column2" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="ExtendLock" FunctionName="JingMeiModel.Store.ExtendLock" />
+          <FunctionImportMapping FunctionImportName="FreeKeys" FunctionName="JingMeiModel.Store.FreeKeys">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.FreeKeys_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetActivatableWorkflowsActivationParameters" FunctionName="JingMeiModel.Store.GetActivatableWorkflowsActivationParameters" />
+          <FunctionImportMapping FunctionImportName="GetWorkflowInstanceStoreVersion" FunctionName="JingMeiModel.Store.GetWorkflowInstanceStoreVersion">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.GetWorkflowInstanceStoreVersion_Result">
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertDefinitionIdentity" FunctionName="JingMeiModel.Store.InsertDefinitionIdentity" />
+          <FunctionImportMapping FunctionImportName="InsertPromotedProperties" FunctionName="JingMeiModel.Store.InsertPromotedProperties" />
+          <FunctionImportMapping FunctionImportName="InsertRunnableInstanceEntry" FunctionName="JingMeiModel.Store.InsertRunnableInstanceEntry" />
+          <FunctionImportMapping FunctionImportName="LoadInstance" FunctionName="JingMeiModel.Store.LoadInstance" />
+          <FunctionImportMapping FunctionImportName="LockInstance" FunctionName="JingMeiModel.Store.LockInstance" />
+          <FunctionImportMapping FunctionImportName="RecoverInstanceLocks" FunctionName="JingMeiModel.Store.RecoverInstanceLocks" />
+          <FunctionImportMapping FunctionImportName="SaveInstance" FunctionName="JingMeiModel.Store.SaveInstance" />
+          <FunctionImportMapping FunctionImportName="TryLoadRunnableInstance" FunctionName="JingMeiModel.Store.TryLoadRunnableInstance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="JingMeiModel.TryLoadRunnableInstance_Result">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="Column1" ColumnName="Column1" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UnlockInstance" FunctionName="JingMeiModel.Store.UnlockInstance" />
+          <EntitySetMapping Name="checkPerson">
+            <EntityTypeMapping TypeName="JingMeiModel.checkPerson">
+              <MappingFragment StoreEntitySet="checkPerson">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="statusID" ColumnName="statusID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="checkResult">
+            <EntityTypeMapping TypeName="JingMeiModel.checkResult">
+              <MappingFragment StoreEntitySet="checkResult">
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="checkPersonID" ColumnName="checkPersonID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="customer">
+            <EntityTypeMapping TypeName="JingMeiModel.customer">
+              <MappingFragment StoreEntitySet="customer">
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="postision" ColumnName="postision" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="department">
+            <EntityTypeMapping TypeName="JingMeiModel.department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="project">
+            <EntityTypeMapping TypeName="JingMeiModel.project">
+              <MappingFragment StoreEntitySet="project">
+                <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+                <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+                <ScalarProperty Name="batchFinishTime" ColumnName="batchFinishTime" />
+                <ScalarProperty Name="smallAmountFinishTime" ColumnName="smallAmountFinishTime" />
+                <ScalarProperty Name="testFinishTime" ColumnName="testFinishTime" />
+                <ScalarProperty Name="demoFinishTime" ColumnName="demoFinishTime" />
+                <ScalarProperty Name="productType" ColumnName="productType" />
+                <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
+                <ScalarProperty Name="lifeCycle" ColumnName="lifeCycle" />
+                <ScalarProperty Name="annualDemand" ColumnName="annualDemand" />
+                <ScalarProperty Name="targetPrice" ColumnName="targetPrice" />
+                <ScalarProperty Name="createPerson" ColumnName="createPerson" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="currentStatuID" ColumnName="currentStatuID" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="descriptID" ColumnName="descriptID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectStatus">
+            <EntityTypeMapping TypeName="JingMeiModel.projectStatus">
+              <MappingFragment StoreEntitySet="projectStatus">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user">
+            <EntityTypeMapping TypeName="JingMeiModel.user">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="isleader" ColumnName="isleader" />
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="pwd" ColumnName="pwd" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DefinitionIdentityTable">
+            <EntityTypeMapping TypeName="JingMeiModel.DefinitionIdentityTable">
+              <MappingFragment StoreEntitySet="DefinitionIdentityTable">
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Package" ColumnName="Package" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DefinitionIdentityAnyRevisionHash" ColumnName="DefinitionIdentityAnyRevisionHash" />
+                <ScalarProperty Name="DefinitionIdentityHash" ColumnName="DefinitionIdentityHash" />
+                <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IdentityOwnerTable">
+            <EntityTypeMapping TypeName="JingMeiModel.IdentityOwnerTable">
+              <MappingFragment StoreEntitySet="IdentityOwnerTable">
+                <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+                <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstanceMetadataChangesTable">
+            <EntityTypeMapping TypeName="JingMeiModel.InstanceMetadataChangesTable">
+              <MappingFragment StoreEntitySet="InstanceMetadataChangesTable">
+                <ScalarProperty Name="Change" ColumnName="Change" />
+                <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+                <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+                <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstancePromotedPropertiesTable">
+            <EntityTypeMapping TypeName="JingMeiModel.InstancePromotedPropertiesTable">
+              <MappingFragment StoreEntitySet="InstancePromotedPropertiesTable">
+                <ScalarProperty Name="Value64" ColumnName="Value64" />
+                <ScalarProperty Name="Value63" ColumnName="Value63" />
+                <ScalarProperty Name="Value62" ColumnName="Value62" />
+                <ScalarProperty Name="Value61" ColumnName="Value61" />
+                <ScalarProperty Name="Value60" ColumnName="Value60" />
+                <ScalarProperty Name="Value59" ColumnName="Value59" />
+                <ScalarProperty Name="Value58" ColumnName="Value58" />
+                <ScalarProperty Name="Value57" ColumnName="Value57" />
+                <ScalarProperty Name="Value56" ColumnName="Value56" />
+                <ScalarProperty Name="Value55" ColumnName="Value55" />
+                <ScalarProperty Name="Value54" ColumnName="Value54" />
+                <ScalarProperty Name="Value53" ColumnName="Value53" />
+                <ScalarProperty Name="Value52" ColumnName="Value52" />
+                <ScalarProperty Name="Value51" ColumnName="Value51" />
+                <ScalarProperty Name="Value50" ColumnName="Value50" />
+                <ScalarProperty Name="Value49" ColumnName="Value49" />
+                <ScalarProperty Name="Value48" ColumnName="Value48" />
+                <ScalarProperty Name="Value47" ColumnName="Value47" />
+                <ScalarProperty Name="Value46" ColumnName="Value46" />
+                <ScalarProperty Name="Value45" ColumnName="Value45" />
+                <ScalarProperty Name="Value44" ColumnName="Value44" />
+                <ScalarProperty Name="Value43" ColumnName="Value43" />
+                <ScalarProperty Name="Value42" ColumnName="Value42" />
+                <ScalarProperty Name="Value41" ColumnName="Value41" />
+                <ScalarProperty Name="Value40" ColumnName="Value40" />
+                <ScalarProperty Name="Value39" ColumnName="Value39" />
+                <ScalarProperty Name="Value38" ColumnName="Value38" />
+                <ScalarProperty Name="Value37" ColumnName="Value37" />
+                <ScalarProperty Name="Value36" ColumnName="Value36" />
+                <ScalarProperty Name="Value35" ColumnName="Value35" />
+                <ScalarProperty Name="Value34" ColumnName="Value34" />
+                <ScalarProperty Name="Value33" ColumnName="Value33" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstancesTable">
+            <EntityTypeMapping TypeName="JingMeiModel.InstancesTable">
+              <MappingFragment StoreEntitySet="InstancesTable">
+                <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="IsReadyToRun" ColumnName="IsReadyToRun" />
+                <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+                <ScalarProperty Name="IsInitialized" ColumnName="IsInitialized" />
+                <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+                <ScalarProperty Name="LastMachineRunOn" ColumnName="LastMachineRunOn" />
+                <ScalarProperty Name="BlockingBookmarks" ColumnName="BlockingBookmarks" />
+                <ScalarProperty Name="SuspensionReason" ColumnName="SuspensionReason" />
+                <ScalarProperty Name="SuspensionExceptionName" ColumnName="SuspensionExceptionName" />
+                <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+                <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="PendingTimer" ColumnName="PendingTimer" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="MetadataEncodingOption" ColumnName="MetadataEncodingOption" />
+                <ScalarProperty Name="DataEncodingOption" ColumnName="DataEncodingOption" />
+                <ScalarProperty Name="MetadataProperties" ColumnName="MetadataProperties" />
+                <ScalarProperty Name="WriteOnlyComplexDataProperties" ColumnName="WriteOnlyComplexDataProperties" />
+                <ScalarProperty Name="WriteOnlyPrimitiveDataProperties" ColumnName="WriteOnlyPrimitiveDataProperties" />
+                <ScalarProperty Name="ComplexDataProperties" ColumnName="ComplexDataProperties" />
+                <ScalarProperty Name="PrimitiveDataProperties" ColumnName="PrimitiveDataProperties" />
+                <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+                <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KeysTable">
+            <EntityTypeMapping TypeName="JingMeiModel.KeysTable">
+              <MappingFragment StoreEntitySet="KeysTable">
+                <ScalarProperty Name="IsAssociated" ColumnName="IsAssociated" />
+                <ScalarProperty Name="Properties" ColumnName="Properties" />
+                <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+                <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+                <ScalarProperty Name="SurrogateKeyId" ColumnName="SurrogateKeyId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LockOwnersTable">
+            <EntityTypeMapping TypeName="JingMeiModel.LockOwnersTable">
+              <MappingFragment StoreEntitySet="LockOwnersTable">
+                <ScalarProperty Name="WorkflowIdentityFilter" ColumnName="WorkflowIdentityFilter" />
+                <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+                <ScalarProperty Name="WriteOnlyComplexLockOwnerData" ColumnName="WriteOnlyComplexLockOwnerData" />
+                <ScalarProperty Name="WriteOnlyPrimitiveLockOwnerData" ColumnName="WriteOnlyPrimitiveLockOwnerData" />
+                <ScalarProperty Name="ComplexLockOwnerData" ColumnName="ComplexLockOwnerData" />
+                <ScalarProperty Name="PrimitiveLockOwnerData" ColumnName="PrimitiveLockOwnerData" />
+                <ScalarProperty Name="DeletesInstanceOnCompletion" ColumnName="DeletesInstanceOnCompletion" />
+                <ScalarProperty Name="EnqueueCommand" ColumnName="EnqueueCommand" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+                <ScalarProperty Name="LockExpiration" ColumnName="LockExpiration" />
+                <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RunnableInstancesTable">
+            <EntityTypeMapping TypeName="JingMeiModel.RunnableInstancesTable">
+              <MappingFragment StoreEntitySet="RunnableInstancesTable">
+                <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+                <ScalarProperty Name="RunnableTime" ColumnName="RunnableTime" />
+                <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+                <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+                <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceDeploymentsTable">
+            <EntityTypeMapping TypeName="JingMeiModel.ServiceDeploymentsTable">
+              <MappingFragment StoreEntitySet="ServiceDeploymentsTable">
+                <ScalarProperty Name="ServiceNamespace" ColumnName="ServiceNamespace" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="RelativeApplicationPath" ColumnName="RelativeApplicationPath" />
+                <ScalarProperty Name="RelativeServicePath" ColumnName="RelativeServicePath" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="ServiceDeploymentHash" ColumnName="ServiceDeploymentHash" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SqlWorkflowInstanceStoreVersionTable">
+            <EntityTypeMapping TypeName="JingMeiModel.SqlWorkflowInstanceStoreVersionTable">
+              <MappingFragment StoreEntitySet="SqlWorkflowInstanceStoreVersionTable">
+                <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InstancePromotedProperties">
+            <EntityTypeMapping TypeName="JingMeiModel.InstancePromotedProperties">
+              <MappingFragment StoreEntitySet="InstancePromotedProperties">
+                <ScalarProperty Name="Value64" ColumnName="Value64" />
+                <ScalarProperty Name="Value63" ColumnName="Value63" />
+                <ScalarProperty Name="Value62" ColumnName="Value62" />
+                <ScalarProperty Name="Value61" ColumnName="Value61" />
+                <ScalarProperty Name="Value60" ColumnName="Value60" />
+                <ScalarProperty Name="Value59" ColumnName="Value59" />
+                <ScalarProperty Name="Value58" ColumnName="Value58" />
+                <ScalarProperty Name="Value57" ColumnName="Value57" />
+                <ScalarProperty Name="Value56" ColumnName="Value56" />
+                <ScalarProperty Name="Value55" ColumnName="Value55" />
+                <ScalarProperty Name="Value54" ColumnName="Value54" />
+                <ScalarProperty Name="Value53" ColumnName="Value53" />
+                <ScalarProperty Name="Value52" ColumnName="Value52" />
+                <ScalarProperty Name="Value51" ColumnName="Value51" />
+                <ScalarProperty Name="Value50" ColumnName="Value50" />
+                <ScalarProperty Name="Value49" ColumnName="Value49" />
+                <ScalarProperty Name="Value48" ColumnName="Value48" />
+                <ScalarProperty Name="Value47" ColumnName="Value47" />
+                <ScalarProperty Name="Value46" ColumnName="Value46" />
+                <ScalarProperty Name="Value45" ColumnName="Value45" />
+                <ScalarProperty Name="Value44" ColumnName="Value44" />
+                <ScalarProperty Name="Value43" ColumnName="Value43" />
+                <ScalarProperty Name="Value42" ColumnName="Value42" />
+                <ScalarProperty Name="Value41" ColumnName="Value41" />
+                <ScalarProperty Name="Value40" ColumnName="Value40" />
+                <ScalarProperty Name="Value39" ColumnName="Value39" />
+                <ScalarProperty Name="Value38" ColumnName="Value38" />
+                <ScalarProperty Name="Value37" ColumnName="Value37" />
+                <ScalarProperty Name="Value36" ColumnName="Value36" />
+                <ScalarProperty Name="Value35" ColumnName="Value35" />
+                <ScalarProperty Name="Value34" ColumnName="Value34" />
+                <ScalarProperty Name="Value33" ColumnName="Value33" />
+                <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+                <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instances">
+            <EntityTypeMapping TypeName="JingMeiModel.Instances">
+              <MappingFragment StoreEntitySet="Instances">
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="Minor" ColumnName="Minor" />
+                <ScalarProperty Name="Major" ColumnName="Major" />
+                <ScalarProperty Name="Build" ColumnName="Build" />
+                <ScalarProperty Name="IdentityPackage" ColumnName="IdentityPackage" />
+                <ScalarProperty Name="IdentityName" ColumnName="IdentityName" />
+                <ScalarProperty Name="WriteOnlyComplexDataProperties" ColumnName="WriteOnlyComplexDataProperties" />
+                <ScalarProperty Name="ReadWriteComplexDataProperties" ColumnName="ReadWriteComplexDataProperties" />
+                <ScalarProperty Name="WriteOnlyPrimitiveDataProperties" ColumnName="WriteOnlyPrimitiveDataProperties" />
+                <ScalarProperty Name="ReadWritePrimitiveDataProperties" ColumnName="ReadWritePrimitiveDataProperties" />
+                <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+                <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+                <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+                <ScalarProperty Name="IsInitialized" ColumnName="IsInitialized" />
+                <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+                <ScalarProperty Name="LastMachine" ColumnName="LastMachine" />
+                <ScalarProperty Name="CurrentMachine" ColumnName="CurrentMachine" />
+                <ScalarProperty Name="ActiveBookmarks" ColumnName="ActiveBookmarks" />
+                <ScalarProperty Name="SuspensionReason" ColumnName="SuspensionReason" />
+                <ScalarProperty Name="SuspensionExceptionName" ColumnName="SuspensionExceptionName" />
+                <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+                <ScalarProperty Name="LastUpdatedTime" ColumnName="LastUpdatedTime" />
+                <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+                <ScalarProperty Name="PendingTimer" ColumnName="PendingTimer" />
+                <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ServiceDeployments">
+            <EntityTypeMapping TypeName="JingMeiModel.ServiceDeployments">
+              <MappingFragment StoreEntitySet="ServiceDeployments">
+                <ScalarProperty Name="ServiceNamespace" ColumnName="ServiceNamespace" />
+                <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+                <ScalarProperty Name="RelativeApplicationPath" ColumnName="RelativeApplicationPath" />
+                <ScalarProperty Name="RelativeServicePath" ColumnName="RelativeServicePath" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zz_ext_resoutceInfo">
+            <EntityTypeMapping TypeName="JingMeiModel.zz_ext_resoutceInfo">
+              <MappingFragment StoreEntitySet="zz_ext_resoutceInfo">
+                <ScalarProperty Name="dntime" ColumnName="dntime" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+                <ScalarProperty Name="filePath" ColumnName="filePath" />
+                <ScalarProperty Name="statuName" ColumnName="statuName" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="checkPermission">
+            <EntityTypeMapping TypeName="JingMeiModel.checkPermission">
+              <MappingFragment StoreEntitySet="checkPermission">
+                <ScalarProperty Name="projectStatuID" ColumnName="projectStatuID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectInfo">
+            <EntityTypeMapping TypeName="JingMeiModel.projectInfo">
+              <MappingFragment StoreEntitySet="projectInfo">
+                <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="descriptID" ColumnName="descriptID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="permission">
+            <EntityTypeMapping TypeName="JingMeiModel.permission">
+              <MappingFragment StoreEntitySet="permission">
+                <ScalarProperty Name="permissions" ColumnName="permissions" />
+                <ScalarProperty Name="projectStatusID" ColumnName="projectStatusID" />
+                <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="resourcePath">
+            <EntityTypeMapping TypeName="JingMeiModel.resourcePath">
+              <MappingFragment StoreEntitySet="resourcePath">
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="dntime" ColumnName="dntime" />
+                <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+                <ScalarProperty Name="filePath" ColumnName="filePath" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="zz_ext_resoutceNotes">
+            <EntityTypeMapping TypeName="JingMeiModel.zz_ext_resoutceNotes">
+              <MappingFragment StoreEntitySet="zz_ext_resoutceNotes">
+                <ScalarProperty Name="dntime" ColumnName="dntime" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="statuName" ColumnName="statuName" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectIDTemps">
+            <EntityTypeMapping TypeName="JingMeiModel.projectIDTemp">
+              <MappingFragment StoreEntitySet="projectIDTemp">
+                <ScalarProperty Name="useDate" ColumnName="useDate" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="getNewProjectID3" FunctionName="JingMeiModel.Store.getNewProjectID" />
+          <EntitySetMapping Name="projectShowInfoes">
+            <EntityTypeMapping TypeName="JingMeiModel.projectShowInfo">
+              <MappingFragment StoreEntitySet="projectShowInfo">
+                <ScalarProperty Name="createPersonName" ColumnName="createPersonName" />
+                <ScalarProperty Name="createPerson" ColumnName="createPerson" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="currentStatuID" ColumnName="currentStatuID" />
+                <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+                <ScalarProperty Name="projectName" ColumnName="projectName" />
+                <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="notices">
+            <EntityTypeMapping TypeName="JingMeiModel.notice">
+              <MappingFragment StoreEntitySet="notice">
+                <ScalarProperty Name="readtime" ColumnName="readtime" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectStatu" ColumnName="projectStatu" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="maxStatuChanges">
+            <EntityTypeMapping TypeName="JingMeiModel.maxStatuChange">
+              <MappingFragment StoreEntitySet="maxStatuChange">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="projectStatuChangeInfoes">
+            <EntityTypeMapping TypeName="JingMeiModel.projectStatuChangeInfo">
+              <MappingFragment StoreEntitySet="projectStatuChangeInfo">
+                <ScalarProperty Name="userID" ColumnName="userID" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="statu" ColumnName="statu" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="productInfoes">
+            <EntityTypeMapping TypeName="JingMeiModel.productInfo">
+              <MappingFragment StoreEntitySet="productInfo">
+                <ScalarProperty Name="innerID" ColumnName="innerID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="projectID" ColumnName="projectID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

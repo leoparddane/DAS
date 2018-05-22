@@ -1,0 +1,564 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="JingMeiModelStoreContainer" CdmEntityContainer="JingMeiEntities">
+    <FunctionImportMapping FunctionImportName="AssociateKeys" FunctionName="JingMeiModel.Store.AssociateKeys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.AssociateKeys_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CompleteKeys" FunctionName="JingMeiModel.Store.CompleteKeys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.CompleteKeys_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CreateInstance" FunctionName="JingMeiModel.Store.CreateInstance" />
+    <FunctionImportMapping FunctionImportName="CreateLockOwner" FunctionName="JingMeiModel.Store.CreateLockOwner" />
+    <FunctionImportMapping FunctionImportName="CreateServiceDeployment" FunctionName="JingMeiModel.Store.CreateServiceDeployment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.CreateServiceDeployment_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="DeleteInstance" FunctionName="JingMeiModel.Store.DeleteInstance" />
+    <FunctionImportMapping FunctionImportName="DeleteLockOwner" FunctionName="JingMeiModel.Store.DeleteLockOwner" />
+    <FunctionImportMapping FunctionImportName="DetectRunnableInstances" FunctionName="JingMeiModel.Store.DetectRunnableInstances">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.DetectRunnableInstances_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Column2" ColumnName="Column2" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ExtendLock" FunctionName="JingMeiModel.Store.ExtendLock" />
+    <FunctionImportMapping FunctionImportName="FreeKeys" FunctionName="JingMeiModel.Store.FreeKeys">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.FreeKeys_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetActivatableWorkflowsActivationParameters" FunctionName="JingMeiModel.Store.GetActivatableWorkflowsActivationParameters" />
+    <FunctionImportMapping FunctionImportName="GetWorkflowInstanceStoreVersion" FunctionName="JingMeiModel.Store.GetWorkflowInstanceStoreVersion">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.GetWorkflowInstanceStoreVersion_Result">
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Minor" ColumnName="Minor" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertDefinitionIdentity" FunctionName="JingMeiModel.Store.InsertDefinitionIdentity" />
+    <FunctionImportMapping FunctionImportName="InsertPromotedProperties" FunctionName="JingMeiModel.Store.InsertPromotedProperties" />
+    <FunctionImportMapping FunctionImportName="InsertRunnableInstanceEntry" FunctionName="JingMeiModel.Store.InsertRunnableInstanceEntry" />
+    <FunctionImportMapping FunctionImportName="LoadInstance" FunctionName="JingMeiModel.Store.LoadInstance" />
+    <FunctionImportMapping FunctionImportName="LockInstance" FunctionName="JingMeiModel.Store.LockInstance" />
+    <FunctionImportMapping FunctionImportName="RecoverInstanceLocks" FunctionName="JingMeiModel.Store.RecoverInstanceLocks" />
+    <FunctionImportMapping FunctionImportName="SaveInstance" FunctionName="JingMeiModel.Store.SaveInstance" />
+    <FunctionImportMapping FunctionImportName="TryLoadRunnableInstance" FunctionName="JingMeiModel.Store.TryLoadRunnableInstance">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="JingMeiModel.TryLoadRunnableInstance_Result">
+          <ScalarProperty Name="Result" ColumnName="Result" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="UnlockInstance" FunctionName="JingMeiModel.Store.UnlockInstance" />
+    <EntitySetMapping Name="checkPerson">
+      <EntityTypeMapping TypeName="JingMeiModel.checkPerson">
+        <MappingFragment StoreEntitySet="checkPerson">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="statusID" ColumnName="statusID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="checkResult">
+      <EntityTypeMapping TypeName="JingMeiModel.checkResult">
+        <MappingFragment StoreEntitySet="checkResult">
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="checkPersonID" ColumnName="checkPersonID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="customer">
+      <EntityTypeMapping TypeName="JingMeiModel.customer">
+        <MappingFragment StoreEntitySet="customer">
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="postision" ColumnName="postision" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="department">
+      <EntityTypeMapping TypeName="JingMeiModel.department">
+        <MappingFragment StoreEntitySet="department">
+          <ScalarProperty Name="departmentName" ColumnName="departmentName" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="project">
+      <EntityTypeMapping TypeName="JingMeiModel.project">
+        <MappingFragment StoreEntitySet="project">
+          <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+          <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+          <ScalarProperty Name="batchFinishTime" ColumnName="batchFinishTime" />
+          <ScalarProperty Name="smallAmountFinishTime" ColumnName="smallAmountFinishTime" />
+          <ScalarProperty Name="testFinishTime" ColumnName="testFinishTime" />
+          <ScalarProperty Name="demoFinishTime" ColumnName="demoFinishTime" />
+          <ScalarProperty Name="productType" ColumnName="productType" />
+          <ScalarProperty Name="paymentMethod" ColumnName="paymentMethod" />
+          <ScalarProperty Name="lifeCycle" ColumnName="lifeCycle" />
+          <ScalarProperty Name="annualDemand" ColumnName="annualDemand" />
+          <ScalarProperty Name="targetPrice" ColumnName="targetPrice" />
+          <ScalarProperty Name="createPerson" ColumnName="createPerson" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="currentStatuID" ColumnName="currentStatuID" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="descriptID" ColumnName="descriptID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projectStatus">
+      <EntityTypeMapping TypeName="JingMeiModel.projectStatus">
+        <MappingFragment StoreEntitySet="projectStatus">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user">
+      <EntityTypeMapping TypeName="JingMeiModel.user">
+        <MappingFragment StoreEntitySet="user">
+          <ScalarProperty Name="isleader" ColumnName="isleader" />
+          <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="pwd" ColumnName="pwd" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DefinitionIdentityTable">
+      <EntityTypeMapping TypeName="JingMeiModel.DefinitionIdentityTable">
+        <MappingFragment StoreEntitySet="DefinitionIdentityTable">
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="Minor" ColumnName="Minor" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Package" ColumnName="Package" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DefinitionIdentityAnyRevisionHash" ColumnName="DefinitionIdentityAnyRevisionHash" />
+          <ScalarProperty Name="DefinitionIdentityHash" ColumnName="DefinitionIdentityHash" />
+          <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IdentityOwnerTable">
+      <EntityTypeMapping TypeName="JingMeiModel.IdentityOwnerTable">
+        <MappingFragment StoreEntitySet="IdentityOwnerTable">
+          <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+          <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstanceMetadataChangesTable">
+      <EntityTypeMapping TypeName="JingMeiModel.InstanceMetadataChangesTable">
+        <MappingFragment StoreEntitySet="InstanceMetadataChangesTable">
+          <ScalarProperty Name="Change" ColumnName="Change" />
+          <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+          <ScalarProperty Name="ChangeTime" ColumnName="ChangeTime" />
+          <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstancePromotedPropertiesTable">
+      <EntityTypeMapping TypeName="JingMeiModel.InstancePromotedPropertiesTable">
+        <MappingFragment StoreEntitySet="InstancePromotedPropertiesTable">
+          <ScalarProperty Name="Value64" ColumnName="Value64" />
+          <ScalarProperty Name="Value63" ColumnName="Value63" />
+          <ScalarProperty Name="Value62" ColumnName="Value62" />
+          <ScalarProperty Name="Value61" ColumnName="Value61" />
+          <ScalarProperty Name="Value60" ColumnName="Value60" />
+          <ScalarProperty Name="Value59" ColumnName="Value59" />
+          <ScalarProperty Name="Value58" ColumnName="Value58" />
+          <ScalarProperty Name="Value57" ColumnName="Value57" />
+          <ScalarProperty Name="Value56" ColumnName="Value56" />
+          <ScalarProperty Name="Value55" ColumnName="Value55" />
+          <ScalarProperty Name="Value54" ColumnName="Value54" />
+          <ScalarProperty Name="Value53" ColumnName="Value53" />
+          <ScalarProperty Name="Value52" ColumnName="Value52" />
+          <ScalarProperty Name="Value51" ColumnName="Value51" />
+          <ScalarProperty Name="Value50" ColumnName="Value50" />
+          <ScalarProperty Name="Value49" ColumnName="Value49" />
+          <ScalarProperty Name="Value48" ColumnName="Value48" />
+          <ScalarProperty Name="Value47" ColumnName="Value47" />
+          <ScalarProperty Name="Value46" ColumnName="Value46" />
+          <ScalarProperty Name="Value45" ColumnName="Value45" />
+          <ScalarProperty Name="Value44" ColumnName="Value44" />
+          <ScalarProperty Name="Value43" ColumnName="Value43" />
+          <ScalarProperty Name="Value42" ColumnName="Value42" />
+          <ScalarProperty Name="Value41" ColumnName="Value41" />
+          <ScalarProperty Name="Value40" ColumnName="Value40" />
+          <ScalarProperty Name="Value39" ColumnName="Value39" />
+          <ScalarProperty Name="Value38" ColumnName="Value38" />
+          <ScalarProperty Name="Value37" ColumnName="Value37" />
+          <ScalarProperty Name="Value36" ColumnName="Value36" />
+          <ScalarProperty Name="Value35" ColumnName="Value35" />
+          <ScalarProperty Name="Value34" ColumnName="Value34" />
+          <ScalarProperty Name="Value33" ColumnName="Value33" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstancesTable">
+      <EntityTypeMapping TypeName="JingMeiModel.InstancesTable">
+        <MappingFragment StoreEntitySet="InstancesTable">
+          <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="IsReadyToRun" ColumnName="IsReadyToRun" />
+          <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+          <ScalarProperty Name="IsInitialized" ColumnName="IsInitialized" />
+          <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+          <ScalarProperty Name="LastMachineRunOn" ColumnName="LastMachineRunOn" />
+          <ScalarProperty Name="BlockingBookmarks" ColumnName="BlockingBookmarks" />
+          <ScalarProperty Name="SuspensionReason" ColumnName="SuspensionReason" />
+          <ScalarProperty Name="SuspensionExceptionName" ColumnName="SuspensionExceptionName" />
+          <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+          <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="PendingTimer" ColumnName="PendingTimer" />
+          <ScalarProperty Name="Version" ColumnName="Version" />
+          <ScalarProperty Name="MetadataEncodingOption" ColumnName="MetadataEncodingOption" />
+          <ScalarProperty Name="DataEncodingOption" ColumnName="DataEncodingOption" />
+          <ScalarProperty Name="MetadataProperties" ColumnName="MetadataProperties" />
+          <ScalarProperty Name="WriteOnlyComplexDataProperties" ColumnName="WriteOnlyComplexDataProperties" />
+          <ScalarProperty Name="WriteOnlyPrimitiveDataProperties" ColumnName="WriteOnlyPrimitiveDataProperties" />
+          <ScalarProperty Name="ComplexDataProperties" ColumnName="ComplexDataProperties" />
+          <ScalarProperty Name="PrimitiveDataProperties" ColumnName="PrimitiveDataProperties" />
+          <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+          <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KeysTable">
+      <EntityTypeMapping TypeName="JingMeiModel.KeysTable">
+        <MappingFragment StoreEntitySet="KeysTable">
+          <ScalarProperty Name="IsAssociated" ColumnName="IsAssociated" />
+          <ScalarProperty Name="Properties" ColumnName="Properties" />
+          <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+          <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+          <ScalarProperty Name="SurrogateKeyId" ColumnName="SurrogateKeyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LockOwnersTable">
+      <EntityTypeMapping TypeName="JingMeiModel.LockOwnersTable">
+        <MappingFragment StoreEntitySet="LockOwnersTable">
+          <ScalarProperty Name="WorkflowIdentityFilter" ColumnName="WorkflowIdentityFilter" />
+          <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+          <ScalarProperty Name="WriteOnlyComplexLockOwnerData" ColumnName="WriteOnlyComplexLockOwnerData" />
+          <ScalarProperty Name="WriteOnlyPrimitiveLockOwnerData" ColumnName="WriteOnlyPrimitiveLockOwnerData" />
+          <ScalarProperty Name="ComplexLockOwnerData" ColumnName="ComplexLockOwnerData" />
+          <ScalarProperty Name="PrimitiveLockOwnerData" ColumnName="PrimitiveLockOwnerData" />
+          <ScalarProperty Name="DeletesInstanceOnCompletion" ColumnName="DeletesInstanceOnCompletion" />
+          <ScalarProperty Name="EnqueueCommand" ColumnName="EnqueueCommand" />
+          <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+          <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+          <ScalarProperty Name="LockExpiration" ColumnName="LockExpiration" />
+          <ScalarProperty Name="SurrogateLockOwnerId" ColumnName="SurrogateLockOwnerId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RunnableInstancesTable">
+      <EntityTypeMapping TypeName="JingMeiModel.RunnableInstancesTable">
+        <MappingFragment StoreEntitySet="RunnableInstancesTable">
+          <ScalarProperty Name="SurrogateIdentityId" ColumnName="SurrogateIdentityId" />
+          <ScalarProperty Name="RunnableTime" ColumnName="RunnableTime" />
+          <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+          <ScalarProperty Name="WorkflowHostType" ColumnName="WorkflowHostType" />
+          <ScalarProperty Name="SurrogateInstanceId" ColumnName="SurrogateInstanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceDeploymentsTable">
+      <EntityTypeMapping TypeName="JingMeiModel.ServiceDeploymentsTable">
+        <MappingFragment StoreEntitySet="ServiceDeploymentsTable">
+          <ScalarProperty Name="ServiceNamespace" ColumnName="ServiceNamespace" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="RelativeApplicationPath" ColumnName="RelativeApplicationPath" />
+          <ScalarProperty Name="RelativeServicePath" ColumnName="RelativeServicePath" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="ServiceDeploymentHash" ColumnName="ServiceDeploymentHash" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SqlWorkflowInstanceStoreVersionTable">
+      <EntityTypeMapping TypeName="JingMeiModel.SqlWorkflowInstanceStoreVersionTable">
+        <MappingFragment StoreEntitySet="SqlWorkflowInstanceStoreVersionTable">
+          <ScalarProperty Name="LastUpdated" ColumnName="LastUpdated" />
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="Minor" ColumnName="Minor" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstancePromotedProperties">
+      <EntityTypeMapping TypeName="JingMeiModel.InstancePromotedProperties">
+        <MappingFragment StoreEntitySet="InstancePromotedProperties">
+          <ScalarProperty Name="Value64" ColumnName="Value64" />
+          <ScalarProperty Name="Value63" ColumnName="Value63" />
+          <ScalarProperty Name="Value62" ColumnName="Value62" />
+          <ScalarProperty Name="Value61" ColumnName="Value61" />
+          <ScalarProperty Name="Value60" ColumnName="Value60" />
+          <ScalarProperty Name="Value59" ColumnName="Value59" />
+          <ScalarProperty Name="Value58" ColumnName="Value58" />
+          <ScalarProperty Name="Value57" ColumnName="Value57" />
+          <ScalarProperty Name="Value56" ColumnName="Value56" />
+          <ScalarProperty Name="Value55" ColumnName="Value55" />
+          <ScalarProperty Name="Value54" ColumnName="Value54" />
+          <ScalarProperty Name="Value53" ColumnName="Value53" />
+          <ScalarProperty Name="Value52" ColumnName="Value52" />
+          <ScalarProperty Name="Value51" ColumnName="Value51" />
+          <ScalarProperty Name="Value50" ColumnName="Value50" />
+          <ScalarProperty Name="Value49" ColumnName="Value49" />
+          <ScalarProperty Name="Value48" ColumnName="Value48" />
+          <ScalarProperty Name="Value47" ColumnName="Value47" />
+          <ScalarProperty Name="Value46" ColumnName="Value46" />
+          <ScalarProperty Name="Value45" ColumnName="Value45" />
+          <ScalarProperty Name="Value44" ColumnName="Value44" />
+          <ScalarProperty Name="Value43" ColumnName="Value43" />
+          <ScalarProperty Name="Value42" ColumnName="Value42" />
+          <ScalarProperty Name="Value41" ColumnName="Value41" />
+          <ScalarProperty Name="Value40" ColumnName="Value40" />
+          <ScalarProperty Name="Value39" ColumnName="Value39" />
+          <ScalarProperty Name="Value38" ColumnName="Value38" />
+          <ScalarProperty Name="Value37" ColumnName="Value37" />
+          <ScalarProperty Name="Value36" ColumnName="Value36" />
+          <ScalarProperty Name="Value35" ColumnName="Value35" />
+          <ScalarProperty Name="Value34" ColumnName="Value34" />
+          <ScalarProperty Name="Value33" ColumnName="Value33" />
+          <ScalarProperty Name="PromotionName" ColumnName="PromotionName" />
+          <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instances">
+      <EntityTypeMapping TypeName="JingMeiModel.Instances">
+        <MappingFragment StoreEntitySet="Instances">
+          <ScalarProperty Name="Revision" ColumnName="Revision" />
+          <ScalarProperty Name="Minor" ColumnName="Minor" />
+          <ScalarProperty Name="Major" ColumnName="Major" />
+          <ScalarProperty Name="Build" ColumnName="Build" />
+          <ScalarProperty Name="IdentityPackage" ColumnName="IdentityPackage" />
+          <ScalarProperty Name="IdentityName" ColumnName="IdentityName" />
+          <ScalarProperty Name="WriteOnlyComplexDataProperties" ColumnName="WriteOnlyComplexDataProperties" />
+          <ScalarProperty Name="ReadWriteComplexDataProperties" ColumnName="ReadWriteComplexDataProperties" />
+          <ScalarProperty Name="WriteOnlyPrimitiveDataProperties" ColumnName="WriteOnlyPrimitiveDataProperties" />
+          <ScalarProperty Name="ReadWritePrimitiveDataProperties" ColumnName="ReadWritePrimitiveDataProperties" />
+          <ScalarProperty Name="EncodingOption" ColumnName="EncodingOption" />
+          <ScalarProperty Name="IsCompleted" ColumnName="IsCompleted" />
+          <ScalarProperty Name="IsSuspended" ColumnName="IsSuspended" />
+          <ScalarProperty Name="IsInitialized" ColumnName="IsInitialized" />
+          <ScalarProperty Name="ExecutionStatus" ColumnName="ExecutionStatus" />
+          <ScalarProperty Name="LastMachine" ColumnName="LastMachine" />
+          <ScalarProperty Name="CurrentMachine" ColumnName="CurrentMachine" />
+          <ScalarProperty Name="ActiveBookmarks" ColumnName="ActiveBookmarks" />
+          <ScalarProperty Name="SuspensionReason" ColumnName="SuspensionReason" />
+          <ScalarProperty Name="SuspensionExceptionName" ColumnName="SuspensionExceptionName" />
+          <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+          <ScalarProperty Name="LastUpdatedTime" ColumnName="LastUpdatedTime" />
+          <ScalarProperty Name="CreationTime" ColumnName="CreationTime" />
+          <ScalarProperty Name="PendingTimer" ColumnName="PendingTimer" />
+          <ScalarProperty Name="InstanceId" ColumnName="InstanceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceDeployments">
+      <EntityTypeMapping TypeName="JingMeiModel.ServiceDeployments">
+        <MappingFragment StoreEntitySet="ServiceDeployments">
+          <ScalarProperty Name="ServiceNamespace" ColumnName="ServiceNamespace" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="RelativeApplicationPath" ColumnName="RelativeApplicationPath" />
+          <ScalarProperty Name="RelativeServicePath" ColumnName="RelativeServicePath" />
+          <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+          <ScalarProperty Name="ServiceDeploymentId" ColumnName="ServiceDeploymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zz_ext_resoutceInfo">
+      <EntityTypeMapping TypeName="JingMeiModel.zz_ext_resoutceInfo">
+        <MappingFragment StoreEntitySet="zz_ext_resoutceInfo">
+          <ScalarProperty Name="dntime" ColumnName="dntime" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+          <ScalarProperty Name="filePath" ColumnName="filePath" />
+          <ScalarProperty Name="statuName" ColumnName="statuName" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="checkPermission">
+      <EntityTypeMapping TypeName="JingMeiModel.checkPermission">
+        <MappingFragment StoreEntitySet="checkPermission">
+          <ScalarProperty Name="projectStatuID" ColumnName="projectStatuID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projectInfo">
+      <EntityTypeMapping TypeName="JingMeiModel.projectInfo">
+        <MappingFragment StoreEntitySet="projectInfo">
+          <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+          <ScalarProperty Name="customername" ColumnName="customername" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="descriptID" ColumnName="descriptID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permission">
+      <EntityTypeMapping TypeName="JingMeiModel.permission">
+        <MappingFragment StoreEntitySet="permission">
+          <ScalarProperty Name="permissions" ColumnName="permissions" />
+          <ScalarProperty Name="projectStatusID" ColumnName="projectStatusID" />
+          <ScalarProperty Name="departmentID" ColumnName="departmentID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="resourcePath">
+      <EntityTypeMapping TypeName="JingMeiModel.resourcePath">
+        <MappingFragment StoreEntitySet="resourcePath">
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="dntime" ColumnName="dntime" />
+          <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+          <ScalarProperty Name="filePath" ColumnName="filePath" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="zz_ext_resoutceNotes">
+      <EntityTypeMapping TypeName="JingMeiModel.zz_ext_resoutceNotes">
+        <MappingFragment StoreEntitySet="zz_ext_resoutceNotes">
+          <ScalarProperty Name="dntime" ColumnName="dntime" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="uploadPerson" ColumnName="uploadPerson" />
+          <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="statuName" ColumnName="statuName" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projectIDTemps">
+      <EntityTypeMapping TypeName="JingMeiModel.projectIDTemp">
+        <MappingFragment StoreEntitySet="projectIDTemp">
+          <ScalarProperty Name="useDate" ColumnName="useDate" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="getNewProjectID3" FunctionName="JingMeiModel.Store.getNewProjectID" />
+    <EntitySetMapping Name="projectShowInfoes">
+      <EntityTypeMapping TypeName="JingMeiModel.projectShowInfo">
+        <MappingFragment StoreEntitySet="projectShowInfo">
+          <ScalarProperty Name="createPersonName" ColumnName="createPersonName" />
+          <ScalarProperty Name="createPerson" ColumnName="createPerson" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="currentStatuID" ColumnName="currentStatuID" />
+          <ScalarProperty Name="customerLH" ColumnName="customerLH" />
+          <ScalarProperty Name="projectName" ColumnName="projectName" />
+          <ScalarProperty Name="instanceID" ColumnName="instanceID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="notices">
+      <EntityTypeMapping TypeName="JingMeiModel.notice">
+        <MappingFragment StoreEntitySet="notice">
+          <ScalarProperty Name="readtime" ColumnName="readtime" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectStatu" ColumnName="projectStatu" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="maxStatuChanges">
+      <EntityTypeMapping TypeName="JingMeiModel.maxStatuChange">
+        <MappingFragment StoreEntitySet="maxStatuChange">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="projectStatuChangeInfoes">
+      <EntityTypeMapping TypeName="JingMeiModel.projectStatuChangeInfo">
+        <MappingFragment StoreEntitySet="projectStatuChangeInfo">
+          <ScalarProperty Name="userID" ColumnName="userID" />
+          <ScalarProperty Name="time" ColumnName="time" />
+          <ScalarProperty Name="statu" ColumnName="statu" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productInfoes">
+      <EntityTypeMapping TypeName="JingMeiModel.productInfo">
+        <MappingFragment StoreEntitySet="productInfo">
+          <ScalarProperty Name="innerID" ColumnName="innerID" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="projectID" ColumnName="projectID" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

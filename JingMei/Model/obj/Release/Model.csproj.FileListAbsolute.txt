@@ -1,0 +1,14 @@
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\Model.dll.config
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\Model.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\Model.pdb
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\EntityFramework.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\EntityFramework.SqlServer.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\EntityFramework.xml
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\EntityFramework.SqlServer.xml
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\obj\Release\Model.csprojResolveAssemblyReference.cache
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\obj\Release\Model.csproj.CoreCompileInputs.cache
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\obj\Release\Model.csproj.CopyComplete
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\obj\Release\Model.dll
+F:\优服普联\项目\开发中的项目\晶美\晶美项目管理_鲍顺亮\JingMei\Model\obj\Release\Model.pdb

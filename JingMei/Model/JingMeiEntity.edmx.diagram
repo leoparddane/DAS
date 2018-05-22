@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f65073adbc2a413fbe2812e9a1c7dbf7" Name="Diagram1" ZoomLevel="76">
+        <EntityTypeShape EntityType="JingMeiModel.checkPerson" Width="1.5" PointX="3" PointY="9.125" />
+        <EntityTypeShape EntityType="JingMeiModel.checkResult" Width="1.5" PointX="8.25" PointY="6.125" />
+        <EntityTypeShape EntityType="JingMeiModel.customer" Width="1.5" PointX="8.25" PointY="20.75" />
+        <EntityTypeShape EntityType="JingMeiModel.department" Width="1.5" PointX="1.5" PointY="1.375" />
+        <EntityTypeShape EntityType="JingMeiModel.project" Width="1.5" PointX="6" PointY="7.375" />
+        <EntityTypeShape EntityType="JingMeiModel.projectStatus" Width="1.5" PointX="0.75" PointY="9.125" />
+        <EntityTypeShape EntityType="JingMeiModel.user" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="JingMeiModel.DefinitionIdentityTable" Width="1.5" PointX="3.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.IdentityOwnerTable" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="JingMeiModel.InstanceMetadataChangesTable" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="JingMeiModel.InstancePromotedPropertiesTable" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.InstancesTable" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.KeysTable" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.LockOwnersTable" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.RunnableInstancesTable" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="JingMeiModel.ServiceDeploymentsTable" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="JingMeiModel.SqlWorkflowInstanceStoreVersionTable" Width="1.5" PointX="10.75" PointY="12.75" />
+        <EntityTypeShape EntityType="JingMeiModel.InstancePromotedProperties" Width="1.5" PointX="12.75" PointY="12.75" />
+        <EntityTypeShape EntityType="JingMeiModel.Instances" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="JingMeiModel.ServiceDeployments" Width="1.5" PointX="13.75" PointY="7.75" />
+        <AssociationConnector Association="JingMeiModel.FK_checkPerson_projectStatus1" />
+        <AssociationConnector Association="JingMeiModel.FK_checkPerson_user" />
+        <AssociationConnector Association="JingMeiModel.FK_checkResult_project" />
+        <AssociationConnector Association="JingMeiModel.FK_checkResult_user" />
+        <AssociationConnector Association="JingMeiModel.FK_customer_project" />
+        <AssociationConnector Association="JingMeiModel.FK_user_department" />
+        <AssociationConnector Association="JingMeiModel.FK_project_projectStatus" />
+        <AssociationConnector Association="JingMeiModel.FK_project_user" />
+        <EntityTypeShape EntityType="JingMeiModel.zz_ext_resoutceInfo" Width="1.5" PointX="15.375" PointY="0.75" />
+        <EntityTypeShape EntityType="JingMeiModel.checkPermission" Width="1.5" PointX="7" PointY="15.125" />
+        <AssociationConnector Association="JingMeiModel.FK_checkPermission_projectStatus" />
+        <AssociationConnector Association="JingMeiModel.FK_checkPermission_user" />
+        <EntityTypeShape EntityType="JingMeiModel.projectInfo" Width="1.5" PointX="9.375" PointY="15.75" />
+        <EntityTypeShape EntityType="JingMeiModel.permission" Width="1.5" PointX="6.375" PointY="3.625" />
+        <AssociationConnector Association="JingMeiModel.FK_permission_department" />
+        <AssociationConnector Association="JingMeiModel.FK_permission_projectStatus" />
+        <EntityTypeShape EntityType="JingMeiModel.resourcePath" Width="1.5" PointX="11.25" PointY="8.75" />
+        <AssociationConnector Association="JingMeiModel.FK_resourcePath_project" />
+        <AssociationConnector Association="JingMeiModel.FK_resourcePath_projectStatus" />
+        <AssociationConnector Association="JingMeiModel.FK_resourcePath_user" />
+        <EntityTypeShape EntityType="JingMeiModel.zz_ext_resoutceNotes" Width="1.5" PointX="15.375" PointY="10.75" />
+        <EntityTypeShape EntityType="JingMeiModel.projectIDTemp" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="JingMeiModel.projectShowInfo" Width="1.5" PointX="15.375" PointY="14.75" />
+        <EntityTypeShape EntityType="JingMeiModel.notice" Width="1.5" PointX="18.25" PointY="7.375" />
+        <AssociationConnector Association="JingMeiModel.FK_notice_project" />
+        <AssociationConnector Association="JingMeiModel.FK_notice_projectStatus" />
+        <AssociationConnector Association="JingMeiModel.FK_notice_user" />
+        <EntityTypeShape EntityType="JingMeiModel.maxStatuChange" PointX="0.75" PointY="16.75" Width="1.5" />
+        <EntityTypeShape EntityType="JingMeiModel.projectStatuChangeInfo" Width="1.5" PointX="18.25" PointY="11.625" />
+        <AssociationConnector Association="JingMeiModel.FK_projectStatuInfo_project" />
+        <AssociationConnector Association="JingMeiModel.FK_projectStatuChangeInfo_projectStatus" />
+        <AssociationConnector Association="JingMeiModel.FK_projectStatuChangeInfo_user" />
+        <EntityTypeShape EntityType="JingMeiModel.productInfo" Width="1.5" PointX="8.25" PointY="9.375" />
+        <AssociationConnector Association="JingMeiModel.FK_productInfo_project" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

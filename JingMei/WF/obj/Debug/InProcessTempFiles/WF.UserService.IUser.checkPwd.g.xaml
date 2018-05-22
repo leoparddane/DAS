@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<this:checkPwd this:EndpointConfigurationName="UserService" mva:VisualBasic.Settings="Assembly references and imported namespaces serialized as XML namespaces" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://tempuri.org/" xmlns:p1="http://schemas.microsoft.com/netfx/2009/xaml/servicemodel" xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System" xmlns:this="clr-namespace:WF.UserService.Activities;assembly=WF" xmlns:wu="clr-namespace:WF.UserService;assembly=WF, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" xmlns:wu1="clr-namespace:WF.UserService;assembly=WF" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <this:checkPwd.Implementation>
+    <Sequence>
+      <Sequence.Variables>
+        <x:Reference>__ReferenceID1</x:Reference>
+        <x:Reference>__ReferenceID2</x:Reference>
+      </Sequence.Variables>
+      <p1:Send x:Name="__ReferenceID0" Action="http://tempuri.org/IUser/checkPwd" OperationName="checkPwd" ServiceContractName="p:IUser">
+        <p1:Send.CorrelationInitializers>
+          <p1:RequestReplyCorrelationInitializer>
+            <p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+              <InArgument x:TypeArguments="p1:CorrelationHandle">
+                <VariableValue x:TypeArguments="p1:CorrelationHandle">
+                  <VariableValue.Variable>
+                    <Variable x:TypeArguments="p1:CorrelationHandle" x:Name="__ReferenceID2" />
+                  </VariableValue.Variable>
+                </VariableValue>
+              </InArgument>
+            </p1:RequestReplyCorrelationInitializer.CorrelationHandle>
+          </p1:RequestReplyCorrelationInitializer>
+        </p1:Send.CorrelationInitializers>
+        <p1:SendMessageContent>
+          <InArgument x:TypeArguments="wu1:checkPwdRequest">[New WF.UserService.checkPwdRequest() With { .username = username, .pwd = pwd }]</InArgument>
+        </p1:SendMessageContent>
+        <p1:Send.EndpointConfigurationName>
+          <PropertyReference x:TypeArguments="x:String" PropertyName="EndpointConfigurationName" />
+        </p1:Send.EndpointConfigurationName>
+      </p1:Send>
+      <p1:ReceiveReply Request="{x:Reference __ReferenceID0}" Action="http://tempuri.org/IUser/checkPwdResponse">
+        <p1:ReceiveMessageContent>
+          <OutArgument x:TypeArguments="wu1:checkPwdResponse">
+            <VariableReference x:TypeArguments="wu1:checkPwdResponse">
+              <VariableReference.Variable>
+                <Variable x:TypeArguments="wu1:checkPwdResponse" x:Name="__ReferenceID1" Name="tempResult_0bf7439be6534ab0bfe69753d7f04312" />
+              </VariableReference.Variable>
+            </VariableReference>
+          </OutArgument>
+        </p1:ReceiveMessageContent>
+      </p1:ReceiveReply>
+      <Assign>
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Boolean">[checkPwdResult]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Boolean">[tempResult_0bf7439be6534ab0bfe69753d7f04312.checkPwdResult]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <sads:DebugSymbol.Symbol>d5oBRzpc5LyY5pyN5pmu6IGUXOmhueebrlzlvIDlj5HkuK3nmoTpobnnm65c5pm2576OXOaZtue+jumhueebrueuoeeQhl/pso3pobrkuq5cSmluZ01laVxXRlxDb25uZWN0ZWQgU2VydmljZXNcVXNlclNlcnZpY2VcV0YuVXNlclNlcnZpY2UuSVVzZXIuY2hlY2tQd2QueGFtbAklA1MOAgEBKgU+DwIBCj8FSRcCAQdKBVEOAgECOTs5iwECAQwvDzMfAgELQgtGHwIBCU8xT20CAQVMMkxCAgED</sads:DebugSymbol.Symbol>
+    </Sequence>
+  </this:checkPwd.Implementation>
+</this:checkPwd>

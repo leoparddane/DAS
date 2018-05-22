@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://schemas.microsoft.com/ws/2005/02/mex/bindings" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Project" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://schemas.microsoft.com/ws/2005/02/mex/bindings" location="http://localhost:8733/Project/?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Project/?xsd=xsd2" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Project/?xsd=xsd0" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Project/?xsd=xsd1" namespace="http://schemas.datacontract.org/2004/07/Model" />
+      <xsd:import schemaLocation="http://localhost:8733/Project/?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProject_getAllList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllList" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getAllList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getProjectStatu_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProjectStatu" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getProjectStatu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProjectStatuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_updateProjectStatu_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateProjectStatu" />
+  </wsdl:message>
+  <wsdl:message name="IProject_updateProjectStatu_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateProjectStatuResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getProjectStatuName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProjectStatuName" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getProjectStatuName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProjectStatuNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_addCheckInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:addCheckInfo" />
+  </wsdl:message>
+  <wsdl:message name="IProject_addCheckInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addCheckInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_addProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:addProject" />
+  </wsdl:message>
+  <wsdl:message name="IProject_addProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_hasUnreadMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasUnreadMessage" />
+  </wsdl:message>
+  <wsdl:message name="IProject_hasUnreadMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasUnreadMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_hasNGMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:hasNGMessage" />
+  </wsdl:message>
+  <wsdl:message name="IProject_hasNGMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hasNGMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getNGMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNGMessage" />
+  </wsdl:message>
+  <wsdl:message name="IProject_getNGMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNGMessageResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProject">
+    <wsdl:operation name="getAllList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/getAllList" message="tns:IProject_getAllList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/getAllListResponse" message="tns:IProject_getAllList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProjectStatu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/getProjectStatu" message="tns:IProject_getProjectStatu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/getProjectStatuResponse" message="tns:IProject_getProjectStatu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProjectStatu">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/updateProjectStatu" message="tns:IProject_updateProjectStatu_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/updateProjectStatuResponse" message="tns:IProject_updateProjectStatu_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProjectStatuName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/getProjectStatuName" message="tns:IProject_getProjectStatuName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/getProjectStatuNameResponse" message="tns:IProject_getProjectStatuName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addCheckInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/addCheckInfo" message="tns:IProject_addCheckInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/addCheckInfoResponse" message="tns:IProject_addCheckInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/addProject" message="tns:IProject_addProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/addProjectResponse" message="tns:IProject_addProject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasUnreadMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/hasUnreadMessage" message="tns:IProject_hasUnreadMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/hasUnreadMessageResponse" message="tns:IProject_hasUnreadMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hasNGMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/hasNGMessage" message="tns:IProject_hasNGMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/hasNGMessageResponse" message="tns:IProject_hasNGMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNGMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProject/getNGMessage" message="tns:IProject_getNGMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProject/getNGMessageResponse" message="tns:IProject_getNGMessage_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProjectService" type="tns:IProject">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getAllList">
+      <soap:operation soapAction="http://tempuri.org/IProject/getAllList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectStatu">
+      <soap:operation soapAction="http://tempuri.org/IProject/getProjectStatu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateProjectStatu">
+      <soap:operation soapAction="http://tempuri.org/IProject/updateProjectStatu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProjectStatuName">
+      <soap:operation soapAction="http://tempuri.org/IProject/getProjectStatuName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addCheckInfo">
+      <soap:operation soapAction="http://tempuri.org/IProject/addCheckInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addProject">
+      <soap:operation soapAction="http://tempuri.org/IProject/addProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasUnreadMessage">
+      <soap:operation soapAction="http://tempuri.org/IProject/hasUnreadMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasNGMessage">
+      <soap:operation soapAction="http://tempuri.org/IProject/hasNGMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNGMessage">
+      <soap:operation soapAction="http://tempuri.org/IProject/getNGMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Project">
+    <wsdl:port name="ProjectService" binding="tns:ProjectService">
+      <soap:address location="http://localhost:8733/Project/" />
+    </wsdl:port>
+    <wsdl:port name="MetadataExchangeHttpBinding_IProject" binding="i0:MetadataExchangeHttpBinding_IProject">
+      <soap12:address location="http://localhost:8733/Project/mex" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:8733/Project/mex</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

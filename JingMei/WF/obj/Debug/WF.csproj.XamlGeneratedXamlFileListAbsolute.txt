@@ -1,0 +1,2 @@
+obj\Debug\projectActivity.g.xaml
+obj\Debug\WF_Project_BeforeInitializeComponentHelper.txt

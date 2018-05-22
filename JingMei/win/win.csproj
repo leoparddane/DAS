@@ -1,0 +1,400 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8F41912-1483-4606-8AFA-9447543A1411}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>win</RootNamespace>
+    <AssemblyName>win</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>U8.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.DurableInstancing" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.DurableInstancing" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UFSTD, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>menu\UFSTD.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="check\check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="check\check.Designer.cs">
+      <DependentUpon>check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProjectService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ResourceService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="createProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createProduct.Designer.cs">
+      <DependentUpon>createProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="demo\demo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="demo\demo.Designer.cs">
+      <DependentUpon>demo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="designProject\designProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="designProject\designProject.Designer.cs">
+      <DependentUpon>designProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DiagramDesignProject\DiagramDesignProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DiagramDesignProject\DiagramDesignProject.Designer.cs">
+      <DependentUpon>DiagramDesignProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="evaluation\evaluation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="evaluation\evaluation.Designer.cs">
+      <DependentUpon>evaluation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="init\init.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="init\init.Designer.cs">
+      <DependentUpon>init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="load.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="load.Designer.cs">
+      <DependentUpon>load.cs</DependentUpon>
+    </Compile>
+    <Compile Include="login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="login.Designer.cs">
+      <DependentUpon>login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mainFrame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mainFrame.Designer.cs">
+      <DependentUpon>mainFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message\NGMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message\NGMessage.Designer.cs">
+      <DependentUpon>NGMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Message\Messages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Message\Messages.Designer.cs">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProductInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProductInfo.Designer.cs">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="projectInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="projectInfo.Designer.cs">
+      <DependentUpon>projectInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\Common.cs" />
+    <Compile Include="Public\LoginUser.cs" />
+    <Compile Include="Public\Notice.cs" />
+    <Compile Include="Public\Permission.cs" />
+    <Compile Include="Public\PermissionEnum.cs" />
+    <Compile Include="Public\ProjectUtility.cs" />
+    <Compile Include="FileDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileDelete.Designer.cs">
+      <DependentUpon>FileDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadyDownload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadyDownload.Designer.cs">
+      <DependentUpon>ReadyDownload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReadyUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReadyUpload.Designer.cs">
+      <DependentUpon>ReadyUpload.cs</DependentUpon>
+    </Compile>
+    <Compile Include="start\start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="start\start.Designer.cs">
+      <DependentUpon>start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\loginModel.cs" />
+    <EmbeddedResource Include="check\check.resx">
+      <DependentUpon>check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createProduct.resx">
+      <DependentUpon>createProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="demo\demo.resx">
+      <DependentUpon>demo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="designProject\designProject.resx">
+      <DependentUpon>designProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DiagramDesignProject\DiagramDesignProject.resx">
+      <DependentUpon>DiagramDesignProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="evaluation\evaluation.resx">
+      <DependentUpon>evaluation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="init\init.resx">
+      <DependentUpon>init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="load.resx">
+      <DependentUpon>load.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="login.resx">
+      <DependentUpon>login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mainFrame.resx">
+      <DependentUpon>mainFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\NGMessage.resx">
+      <DependentUpon>NGMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Message\Messages.resx">
+      <DependentUpon>Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProductInfo.resx">
+      <DependentUpon>ProductInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="projectInfo.resx">
+      <DependentUpon>projectInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="FileDelete.resx">
+      <DependentUpon>FileDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadyDownload.resx">
+      <DependentUpon>ReadyDownload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReadyUpload.resx">
+      <DependentUpon>ReadyUpload.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="start\start.resx">
+      <DependentUpon>start.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Connected Services\ProjectService\item.wsdl" />
+    <None Include="Connected Services\ProjectService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProjectService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProjectService\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProjectService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProjectService\Project.wsdl" />
+    <None Include="Connected Services\ResourceService\item.wsdl" />
+    <None Include="Connected Services\ResourceService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResourceService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResourceService\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ResourceService\Resource.wsdl" />
+    <None Include="Connected Services\ResourceService\win.ResourceService.UploadResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UserService\item.wsdl" />
+    <None Include="Connected Services\UserService\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UserService\User.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Model.productInfo.datasource" />
+    <None Include="Properties\DataSources\Model.project.datasource" />
+    <None Include="Properties\DataSources\Model.projectInfo.datasource" />
+    <None Include="Properties\DataSources\Model.projectShowInfo.datasource" />
+    <None Include="Properties\DataSources\Model.resourcePath.datasource" />
+    <None Include="Properties\DataSources\Model.user.datasource" />
+    <None Include="Properties\DataSources\Model.zz_ext_resoutceInfo.datasource" />
+    <None Include="Properties\DataSources\Model.zz_ext_resoutceNotes.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{dc9b34aa-a484-471e-8d64-f0d921f10117}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{c2d707e0-0df8-4677-805c-7d1d4c809e4e}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Load\Load.csproj">
+      <Project>{6e75c27a-ecc0-4869-8fa1-0338921470f9}</Project>
+      <Name>Load</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{1478e28d-1f05-4509-a6cc-a0c353487c6c}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{4f012271-4d52-4a75-af64-5e56472d1b85}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WF\WF.csproj">
+      <Project>{311ea60d-e3dd-4586-9f19-a3676395855c}</Project>
+      <Name>WF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+    <Content Include="U8.ico" />
+    <None Include="Connected Services\UserService\item.disco" />
+    <None Include="Connected Services\UserService\configuration91.svcinfo" />
+    <None Include="Connected Services\UserService\configuration.svcinfo" />
+    <None Include="Connected Services\UserService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProjectService\item.disco" />
+    <None Include="Connected Services\ProjectService\configuration91.svcinfo" />
+    <None Include="Connected Services\ProjectService\configuration.svcinfo" />
+    <None Include="Connected Services\ProjectService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ResourceService\item.disco" />
+    <None Include="Connected Services\ResourceService\configuration91.svcinfo" />
+    <None Include="Connected Services\ResourceService\configuration.svcinfo" />
+    <None Include="Connected Services\ResourceService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProjectService\" />
+    <WCFMetadataStorage Include="Connected Services\ResourceService\" />
+    <WCFMetadataStorage Include="Connected Services\UserService\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
